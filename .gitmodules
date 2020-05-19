@@ -1,0 +1,15 @@
+[submodule "hmicouch"]
+	path = hmicouch
+	url = https://github.com/AgentsUnited/hmicouch.git
+[submodule "unityproject"]
+	path = unityproject
+	url = https://github.com/AgentsUnited/unityproject.git
+[submodule "daf"]
+	path = daf
+	url = https://github.com/AgentsUnited/daf.git
+[submodule "greta"]
+	path = greta
+	url = https://github.com/isir/greta.git
+[submodule "hmibuild"]
+	path = hmibuild
+	url = https://github.com/ArticulatedSocialAgentsPlatform/hmibuild.git

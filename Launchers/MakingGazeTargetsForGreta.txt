@@ -1,0 +1,17 @@
+Minimanual: how to give Greta some gaze targets to look at in Unity.
+
+we need targets for the other coaches, called "head_COUCH_M_1" etc.
+
+we need other targets that we have in Unity, such as the head_COUCH_USER and BrowserGazeTarget
+
+Such targets are defined in Greta's environment file.
+This environment is defined in the file "Greta/bin/vib.ini", and by default point at Empty.xml.
+Change that path to "./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml".
+
+Greta is assumed to be in 0,0,0 location
+
+Add targets and move them around to get the best fitting gaze target behaviour. The BML Window for Greta (in Launchers) has a dropdown with a gaze example.
+
+Final note: if the Ogre player is not running and connected, gaze will lead to nullpointers
+
+So the computer running Greta will show Greta and her speech using Ogre, while at the same time the computer running the COUCH-UNITY scene will show Greta as part of the Couch Office.s

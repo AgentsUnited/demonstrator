@@ -1,0 +1,12 @@
+set the IP for the right activeMQ server:
+
+- in TechnicalDemonstrator\UT_HMI\HmiCouch\resource\defaultmiddleware.properties
+- in TechnicalDemonstrator\UT_HMI\HmiCouch\resource\multiAgentSpecs\shared_port.xml
+- in TechnicalDemonstrator\UT_HMI\HmiCouch\resource\flippertemplates\CouchGlobal.xml
+- in the ASAP Unity scene --> GlobalActiveMQSettings GameObject; set IP and port there
+
+for running the right Greta-in-Unity version, you should open the modular file in this Launchers directory
+- in Greta, the BMLReceiver etc and the feedback sender of Greta need to be connected to right IP for activeMQ (and to right topic channel but that should already be OK)
+- in Greta, thrift (all 4 grey boxes) need to be connected to right IP where UNITY is running, and to the right port
+- in UNITY thrift command receiver needs to be connected to the right ports and the IP where Greta is running. This is found at the Camille node in the scene
+

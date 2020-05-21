@@ -97,7 +97,7 @@ The following instructions will guide you through setting up and running the dem
 		```
     - Restart Conversational Intent Planner
 
-**Latest fixes and troubleshooting:**
+## Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.
 * To test the Windows voices: What you can try is run `ASAP_Superior_Couch_Start_NoAndroid.bat` and the Unity scene (do not run Conversational Intent Planner!). Once these are connected you run `BmlWindow_ASAP_Start.bat` which opens a window where you can input BML and send it to ASAP. 
 If all is well the agent should talk. If not, try a couple more times and check the console windows for any errors or warnings.

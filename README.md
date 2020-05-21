@@ -2,6 +2,32 @@ The Agents United Open Platform allows you to build a system of multiple virtual
 This repository contains a demonstrator af several coaching agents for different health domains.
 The Agents United platform and this demonstrator are the outcome of the [Council of Coaches european research project](https://council-of-coaches.eu/)
 
+#### Repositories
+
+Each of the different modules that compose the Agents United platform has its own repository. Some of those modules are linked in this demonstrator to build up the "local" demonstrator, while other additional modules are run separately. Some modules are hosted here in Agents United while others are external.
+
+"Local" modules hosted in Agents United:
+* DAF: The Dialogue and Argumentation Framework
+* HMI Couch: The Conversational Intent Planner
+* UnityProject: Unity3D scenes for the agents user interface
+* Demonstrator: This repository, which also contains a collection of executable scripts
+
+Other modules hosted in Agents United:
+* universAAL: Modules for connecting to the universAAL IoT platform
+
+Other modules hosted elsewhere:
+* [Greta](https://github.com/isir/greta): Socio-emotional virtual characters for agents by ISIR - University of Sorbonne
+* [HMI Build](https://github.com/ArticulatedSocialAgentsPlatform/hmibuild): Multi-platform build system by HMI - University of Twente
+* [WOOL Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService): Knowledge base and dialogue management web service of the [WOOL Platform](https://github.com/woolplatform)
+
+*Other modules will be added in the near future*
+
+#### Architecture
+
+If you are interested in figuring out how the entire Agents United platform works you can check out the architecture documentation and diagrams in the [Architecture repository](https://github.com/AgentsUnited/architecture)
+
+#### Instructions
+
 The following instructions will guide you through setting up and running the demonstrator. You can find a list of the latest hotfixes and solutions for possible problems you may come across at the end of this Readme.
 
 ## Pre-requisites

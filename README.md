@@ -110,3 +110,4 @@ For example:
               </speech>          
 </bml>
 ```
+* If you had installing teh DAF module before and are having problems with empty moves, you may have to clear the move cache with: `docker exec -it mongodb mongo couch_content --eval “db.move_cache.remove({})”`

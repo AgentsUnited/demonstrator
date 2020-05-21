@@ -68,7 +68,7 @@ The following instructions will guide you through setting up and running the dem
     2. `ant clean`
     3. `ant resolve`
     4. `ant compile`
-4. **Install *Mary TTS* **
+4. **Install *Mary TTS***
     1. Download *Mary TTS* from http://mary.dfki.de/download/index.html, Runtime Package, and unpack the contents in any folder you want. We will refer to this folder as `{marytts}` from now on.
     2. Go to `{marytts}/bin` and run `maryttscomponent-installer.bat`. From that tool, install the following languages:
     - `enUS/cmu-slt`

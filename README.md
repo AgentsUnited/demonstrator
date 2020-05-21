@@ -26,6 +26,10 @@ Other modules hosted elsewhere:
 
 If you are interested in figuring out how the entire Agents United platform works you can check out the architecture documentation and diagrams in the [Architecture repository](https://github.com/AgentsUnited/architecture)
 
+#### License
+
+The modules hosted in Agents United are licensed under the GNU Lesser General Public License v3.0 (LGPL 3.0) except when otherwise is stated. External modules linked here have their own licenses.
+
 #### Instructions
 
 The following instructions will guide you through setting up and running the demonstrator. You can find a list of the latest hotfixes and solutions for possible problems you may come across at the end of this Readme.

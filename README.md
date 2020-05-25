@@ -81,11 +81,13 @@ The following instructions will guide you through setting up and running the dem
     3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
 6. **Setup the Unity scene.**
     1. The demonstrator scene uses some commercial 3rd party assets that cannot be made available in this repository. Please purchase and/or download these assets from the Unity Asset store and place them in  `{demonstrator}\unityprojet\COUCHUnityProject\Assets\Borg\3rdParty`:
-    - devtid
-    - DigitalKonstrukt
-    - o3n
-    - RecompileDisabler
-    - RootMotion
+    - [Devotid Folding Table and Chair](https://assetstore.unity.com/packages/3d/props/furniture/folding-table-and-chair-pbr-111726)
+    - [DigitalKonstrukt Prototyping Pack](https://assetstore.unity.com/packages/3d/prototyping-pack-free-94277)
+    - [o3n Male and Female UMA Races](https://assetstore.unity.com/packages/3d/characters/humanoids/o3n-male-and-female-uma-races-102187)
+    - [o3n Modern Clothing Pack for Male](https://assetstore.unity.com/packages/3d/characters/modern-clothing-pack-for-o3n-male-120544)
+    - [o3n Modern Clothing Pack for Female](https://assetstore.unity.com/packages/3d/characters/modern-clothing-pack-for-o3n-female-116669)
+    - [RecompileDisabler](https://github.com/appetizermonster/Unity3D-RecompileDisabler/tree/master/Assets/RecompileDisabler)
+    - [RootMotion Final IK](https://assetstore.unity.com/packages/tools/animation/final-ik-14290)
     2. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\COUCHUnityProject`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
     3. In the Project assets panel (usually bottom-left), navigate to `\Assets\Couch` and double-click the scene `CouchMain.unity`
 

@@ -43,12 +43,15 @@ The following instructions will guide you through setting up and running the dem
     - In the installer, include the Android, iOS, tvOS, macOS build supports 
 * **Docker** (Should work with any current version of Docker, including Community for Windows)
     - https://www.docker.com/
+    - Select Linux containers during installation
 * **Java 8 JDK** (Update 211)
     - https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
     - Make sure you add Java to your Path environment variable.
+    - Make sure you set the JAVA_HOME environment variable.
 * **Ant build system** (Latest version)
     - https://ant.apache.org/
     - Make sure you add Ant to your Path environment variable.
+    - Make sure you set the ANT_HOME environment variable
 * **Visual C++ Redistributable for Visual Studio** (versions 2013 and/or 2015)
     - https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads 
     - This is recommended for Unity, although your Windows installation may already have this
@@ -63,7 +66,7 @@ The following instructions will guide you through setting up and running the dem
 2. **Setup the Dialogue and Argumentation Framework (DAF).**
     1. Start Docker. Right click the tray icon and go to Settings. Go to Shared Drives and share the main drive. Go to Advanced and set Memory to 4GB (Recommended).
     2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose pull`
-3. **Setup the Conversational Intent Planner.**
+3. **Setup ASAP and the Conversational Intent Planner.**
     1. Open a command line shell, go to `{demonstrator}\hmicouch` and execute the following commands:
     2. `ant clean`
     3. `ant resolve`
@@ -80,7 +83,7 @@ The following instructions will guide you through setting up and running the dem
     2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
     3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
 6. **Setup the Unity scene.**
-    1. The demonstrator scene uses some commercial 3rd party assets that cannot be made available in this repository. Please purchase and/or download these assets from the Unity Asset store and place them in  `{demonstrator}\unityprojet\COUCHUnityProject\Assets\Borg\3rdParty`:
+    1. The demonstrator scene uses some commercial 3rd party assets that cannot be made available in this repository. Please edit the scene to remove references to these assets, or purchase and/or download these assets from the Unity Asset store and place them in  `{demonstrator}\unityprojet\COUCHUnityProject\Assets\Borg\3rdParty`:
     - [Devotid Folding Table and Chair](https://assetstore.unity.com/packages/3d/props/furniture/folding-table-and-chair-pbr-111726)
     - [DigitalKonstrukt Prototyping Pack](https://assetstore.unity.com/packages/3d/prototyping-pack-free-94277)
     - [o3n Male and Female UMA Races](https://assetstore.unity.com/packages/3d/characters/humanoids/o3n-male-and-female-uma-races-102187)
@@ -133,7 +136,7 @@ The following instructions will guide you through setting up and running the dem
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.
 * To test the Windows voices: What you can try is run `ASAP_Superior_Couch_Start_NoAndroid.bat` from the Launchers folder and the Unity scene (do not run Conversational Intent Planner!). Once these are connected you run `BmlWindow_ASAP_Start.bat` which opens a window where you can input BML and send it to ASAP. 
 If all is well the agent should talk. If not, try a couple more times and check the console windows for any errors or warnings.
-For example:
+For example, the following BML will make one of the agents speak "Hello there!":
 
 ```
 <bml id="sp1"  xmlns="http://www.bml-initiative.org/bml/bml-1.0" characterId="COUCH_M_1">

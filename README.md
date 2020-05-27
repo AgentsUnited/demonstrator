@@ -109,14 +109,14 @@ The following instructions will guide you through setting up and running the dem
 
 ## Settings
 - To change the demo between 'auto play', where the agents perform their own conversation without user input, or user input, where the user can play the role of patient (i.e. activate the UI):
-    - In the flipper template file: `\UT_HMI\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
+    - In the Flipper template file: `{demonstrator}\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
     - Change in the information state the variable "uidefaults" and update the identifier to set the agent that should be controlled through the interface
         `"uidefaults": {"actors": [{ "identifier":"User", "controlledBy": ["unityTest", "tablet"] }]}`
     - Restart Conversational Intent Planner
 
 - The role of the user can be changed. The user takes the role of one of the characters in the dialogue. Currently it is set up as the patient. To change the role of the user (i.e. the moves of the agent that the UI will show):
-    - Open the file: `\UT_HMI\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
-    - Alter the dialogueActors variable to change roles assigned to any of the agents or the user
+    - Open the file: `{demonstrator}\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
+    - Alter the `dialogueActors` variable to change roles assigned to any of the agents or the user
         ```
         "dialogueActors" : [
 			{ "bml_name":"COUCH_CAMILLE", "engine":"greta", "role":"Camille",    "identifier":"COUCH_CAMILLE", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
@@ -131,7 +131,7 @@ The following instructions will guide you through setting up and running the dem
 
 ## Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.
-* To test the Windows voices: What you can try is run `ASAP_Superior_Couch_Start_NoAndroid.bat` and the Unity scene (do not run Conversational Intent Planner!). Once these are connected you run `BmlWindow_ASAP_Start.bat` which opens a window where you can input BML and send it to ASAP. 
+* To test the Windows voices: What you can try is run `ASAP_Superior_Couch_Start_NoAndroid.bat` from the Launchers folder and the Unity scene (do not run Conversational Intent Planner!). Once these are connected you run `BmlWindow_ASAP_Start.bat` which opens a window where you can input BML and send it to ASAP. 
 If all is well the agent should talk. If not, try a couple more times and check the console windows for any errors or warnings.
 For example:
 
@@ -142,4 +142,4 @@ For example:
               </speech>          
 </bml>
 ```
-* If you had installing teh DAF module before and are having problems with empty moves, you may have to clear the move cache with: `docker exec -it mongodb mongo couch_content --eval “db.move_cache.remove({})”`
+* If you had installing teh DAF module before and are having problems with empty moves, you may have to clear the Move cache with: `docker exec -it mongodb mongo couch_content --eval “db.move_cache.remove({})”`

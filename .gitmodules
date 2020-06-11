@@ -1,6 +1,6 @@
-[submodule "hmicouch"]
+[submodule "intent-planner"]
 	path = intent-planner
-	url = https://github.com/AgentsUnited/hmicouch.git
+	url = https://github.com/AgentsUnited/intent-planner.git
 [submodule "unityproject"]
 	path = unityproject
 	url = https://github.com/AgentsUnited/unityproject.git

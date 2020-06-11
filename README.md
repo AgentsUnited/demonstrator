@@ -4,23 +4,20 @@ The Agents United platform and this demonstrator are the outcome of the [Council
 
 #### Repositories
 
-Each of the different modules that compose the Agents United platform has its own repository. Some of those modules are linked in this demonstrator to build up the "local" demonstrator, while other additional modules are run separately. Some modules are hosted here in Agents United while others are external.
+Each of the different modules that compose the Agents United platform has its own repository. Some modules are hosted and maintained here in Agents United while others are external, developed and hosted in 3rd party repositories.
 
-"Local" modules hosted in Agents United:
-* DAF: The Dialogue and Argumentation Framework
-* HMI Couch: The Conversational Intent Planner
+Modules hosted in Agents United:
+* DAF: The Dialogue and Argumentation Framework modules
+* Intent-Planner: The Conversational Intent Planner modules
 * UnityProject: Unity3D scenes for the agents user interface
 * Demonstrator: This repository, which also contains a collection of executable scripts
-
-Other modules hosted in Agents United:
+* Topic-Selection-Engine: The Topic Selection Engine module
 * universAAL: Modules for connecting to the universAAL IoT platform
 
 Other modules hosted elsewhere:
 * [Greta](https://github.com/isir/greta): Socio-emotional virtual characters for agents by ISIR - University of Sorbonne
 * [HMI Build](https://github.com/ArticulatedSocialAgentsPlatform/hmibuild): Multi-platform build system by HMI - University of Twente
 * [WOOL Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService): Knowledge base and dialogue management web service of the [WOOL Platform](https://github.com/woolplatform)
-
-*Other modules will be added in the near future*
 
 #### Architecture
 
@@ -38,22 +35,17 @@ The following instructions will guide you through setting up and running the dem
 
 * **Windows 10 TTS Voices** (Instructions here are only for Windows 10 Pro)
     - You will need the default US voices for Text-To-Speech: Mark, David, and Zira. These can be installed from Settings, Text-to-Speech. Check this wiki for further instructions and troubleshooting: https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices
-* **Unity3D** (version 2017.4.24f1. Other 2017.x versions might work, versions 2018.x or later do NOT).
-    - https://unity3d.com/get-unity/download/archive.  
+* [**Unity3D**](https://unity3d.com/get-unity/download/archive) (version 2017.4.24f1. Other 2017.x versions might work, versions 2018.x or later do NOT).
     - In the installer, include the Android, iOS, tvOS, macOS build supports 
-* **Docker** (Should work with any current version of Docker, including Community for Windows)
-    - https://www.docker.com/
+* [**Docker**](https://www.docker.com/) (Should work with any current version of Docker, including Community for Windows)
     - Select Linux containers during installation
-* **Java 8 JDK** (Update 211)
-    - https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html.
+* [**Java 8 JDK**](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (Update 211)
     - Make sure you add Java to your Path environment variable.
     - Make sure you set the JAVA_HOME environment variable.
-* **Ant build system** (Latest version)
-    - https://ant.apache.org/
+* [**Ant build system**](https://ant.apache.org/) (Latest version)
     - Make sure you add Ant to your Path environment variable.
     - Make sure you set the ANT_HOME environment variable
-* **Visual C++ Redistributable for Visual Studio** (versions 2013 and/or 2015)
-    - https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads 
+* [**Visual C++ Redistributable for Visual Studio**](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) (versions 2013 and/or 2015)
     - This is recommended for Unity, although your Windows installation may already have this
 * Approximately 10GB of disk space and at least 8GB RAM (recommended)
 
@@ -66,8 +58,8 @@ The following instructions will guide you through setting up and running the dem
 2. **Setup the Dialogue and Argumentation Framework (DAF).**
     1. Start Docker. Right click the tray icon and go to Settings. Go to Shared Drives and share the main drive. Go to Advanced and set Memory to 4GB (Recommended).
     2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose pull`
-3. **Setup ASAP and the Conversational Intent Planner.**
-    1. Open a command line shell, go to `{demonstrator}\hmicouch` and execute the following commands:
+3. **Setup ASAP and the Intent Planner.**
+    1. Open a command line shell, go to `{demonstrator}\intent-planner` and execute the following commands:
     2. `ant clean`
     3. `ant resolve`
     4. `ant compile`
@@ -101,7 +93,7 @@ The following instructions will guide you through setting up and running the dem
 4. **Run ASAP Agent Manager**: Open a command line shell, go to `{demonstrator}\Launchers` and run `ASAP_Superior_Couch_Start_NoAndroid.bat`. Wait until you see the message `“Waiting for AgentSpec…”`.
 5. **Run Greta**: Open a command line shell, go to `{demonstrator}\greta\bin` and type the command `java –jar Modular.jar`. The Greta user interface window will open. From its menus, select File > Open and go to `{demonstrator}\greta\bin\Configurations\GretaUnity\Projects\Council of Coaches`, and select `Council of Coaches - TechnicalDemonstrator.xml`.
 6. **Run the Unity scene**: Open the `COUCHUnityProject` in Unity and open the `CouchMain` scene. Press the Play button (usually at the top) and wait for the agents to take their place (you may be asked to allow firewall access).
-7. **Run the Conversational Intent Planner**: Open a command line shell, go to `{demonstrator}\Launchers` and run `Flipper_Superior_Couch_Start.bat`. Wait until the scenario begins.
+7. **Run the Intent Planner**: Open a command line shell, go to `{demonstrator}\Launchers` and run `Flipper_Superior_Couch_Start.bat`. Wait until the scenario begins.
 8. **Run the demo**: When the demo begins, the coaches will start talking. An overlay in the Unity scene will display the moves available to the user, from which you can choose how to proceed.
 9. To restart the dialog, you need to restart only the Conversational Intent Planner (ctrl+c, then run it again).
     
@@ -112,13 +104,13 @@ The following instructions will guide you through setting up and running the dem
 
 ## Settings
 - To change the demo between 'auto play', where the agents perform their own conversation without user input, or user input, where the user can play the role of patient (i.e. activate the UI):
-    - In the Flipper template file: `{demonstrator}\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
+    - In the Flipper template file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
     - Change in the information state the variable "uidefaults" and update the identifier to set the agent that should be controlled through the interface
         `"uidefaults": {"actors": [{ "identifier":"User", "controlledBy": ["unityTest", "tablet"] }]}`
     - Restart Conversational Intent Planner
 
 - The role of the user can be changed. The user takes the role of one of the characters in the dialogue. Currently it is set up as the patient. To change the role of the user (i.e. the moves of the agent that the UI will show):
-    - Open the file: `{demonstrator}\HmiCouch\resource\couchtemplates\DialogueLoader.xml`
+    - Open the file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
     - Alter the `dialogueActors` variable to change roles assigned to any of the agents or the user
         ```
         "dialogueActors" : [
@@ -130,7 +122,7 @@ The following instructions will guide you through setting up and running the dem
 			{ "bml_name":"",		  "engine":"ASAP", "role":"User",    "identifier":"User",		"dialogueActorClass":"UIControllableActor", "priority": 1.0 }
 		]
 		```
-    - Restart Conversational Intent Planner
+    - Restart Intent Planner
 
 ## Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.

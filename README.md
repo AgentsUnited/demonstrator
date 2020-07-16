@@ -95,26 +95,41 @@ The following instructions will guide you through setting up and running the dem
 3. DAF: In addition to ctrl+c in its command line window, wait for Docker containers to quit, then type the command `docker-compose down`. (you can now also stop Docker).
 
 ## Settings
-- To change the demo between 'auto play', where the agents perform their own conversation without user input, or user input, where the user can play the role of patient (i.e. activate the UI):
-    - In the Flipper template file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
-    - Change in the information state the variable "uidefaults" and update the identifier to set the agent that should be controlled through the interface
-        `"uidefaults": {"actors": [{ "identifier":"User", "controlledBy": ["unityTest", "tablet"] }]}`
-    - Restart Conversational Intent Planner
+### Enabling user input
+To change the demo between 'auto play', where the agents perform their own conversation without user input, or user input, where the user can play the role of patient (i.e. activate the UI):
+- In the Flipper template file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
+- Change in the information state the variable "uidefaults" and update the identifier to set the agent that should be controlled through the interface
+`"uidefaults": {"actors": [{ "identifier":"User", "controlledBy": ["unityTest", "tablet"] }]}`
+- Restart Conversational Intent Planner
 
-- The role of the user can be changed. The user takes the role of one of the characters in the dialogue. Currently it is set up as the patient. To change the role of the user (i.e. the moves of the agent that the UI will show):
-    - Open the file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
-    - Alter the `dialogueActors` variable to change roles assigned to any of the agents or the user
-        ```
-        "dialogueActors" : [
-			{ "bml_name":"COUCH_CAMILLE", "engine":"greta", "role":"Camille",    "identifier":"COUCH_CAMILLE", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
-			{ "bml_name":"COUCH_M_1", "engine":"ASAP", "role":"Marc",    "identifier":"COUCH_M_1", "dialogueActorClass":"UIControllableActor", "priority": 0.0 },
-			{ "bml_name":"COUCH_M_2", "engine":"ASAP", "role":"Ben",     "identifier":"COUCH_M_2", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
-			{ "bml_name":"COUCH_F_1", "engine":"ASAP", "role":"Sarah",     "identifier":"COUCH_F_1", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
-			{ "bml_name":"COUCH_M_Android_1", "engine":"ASAP", "role":"Gordon",     "identifier":"COUCH_M_Android_1", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
-			{ "bml_name":"",		  "engine":"ASAP", "role":"User",    "identifier":"User",		"dialogueActorClass":"UIControllableActor", "priority": 1.0 }
-		]
-		```
-    - Restart Intent Planner
+### Changing the role of the user
+The role of the user can be changed. The user takes the role of one of the characters in the dialogue. Currently it is set up as the patient. To change the role of the user (i.e. the moves of the agent that the UI will show):
+- Open the file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
+- Alter the `dialogueActors` variable to change roles assigned to any of the agents or the user
+```
+"dialogueActors" : [
+		{ "bml_name":"COUCH_CAMILLE", "engine":"greta", "role":"Camille",    "identifier":"COUCH_CAMILLE", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
+		{ "bml_name":"COUCH_M_1", "engine":"ASAP", "role":"Marc",    "identifier":"COUCH_M_1", "dialogueActorClass":"UIControllableActor", "priority": 0.0 },
+		{ "bml_name":"COUCH_M_2", "engine":"ASAP", "role":"Ben",     "identifier":"COUCH_M_2", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
+		{ "bml_name":"COUCH_F_1", "engine":"ASAP", "role":"Sarah",     "identifier":"COUCH_F_1", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
+		{ "bml_name":"COUCH_M_Android_1", "engine":"ASAP", "role":"Gordon",     "identifier":"COUCH_M_Android_1", "dialogueActorClass":"UIControllableActor", "priority": 0.5 },
+		{ "bml_name":"",		  "engine":"ASAP", "role":"User",    "identifier":"User",		"dialogueActorClass":"UIControllableActor", "priority": 1.0 }
+	]
+```
+- Restart Intent Planner
+	
+### Using MaryTTS in ASAP
+By default, the ASAP agents are configred to use Windows/Microsoft MSAPI voices. If you are using Linux or Mac you may reconfigure to use MaryTTS instead. To do so, modify the various agent specification files that are mentioned in the ASAP launch configuration: `intent-planner\resource\couchlaunch.json`. By default, `multiAgentSpecs/uma/UMA1.xml` and `multiAgentSpecs/uma/UMA3.xml` are loaded for agent COUCH_M_1 and COUCH_M_2, respectively. In the agent spec modify the loaders `ttsbinding` and `speechengine` to load MaryTTS instead:
+```
+<Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
+	<PhonemeToVisemeMapping resources="Humanoids/shared/phoneme2viseme/" filename="sampaen2disney.xml"/>
+</Loader>
+<Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
+	<Voice factory="WAV_TTS" voicename="dfki-spike"/>
+</Loader>
+```
+Then, add the selected voice as a dependency in the `ivy.xml` file (For example: `<dependency org="marytts"	name="voice-dfki-spike" rev="latest.release" />`) and run `ant resolve` and `ant compile` in a terminal at the root of the `intent-planner` directory.
+Note that ASAP uses an internal embedded MaryTTS instance, which is separate from the MaryTTS standalone server required by Greta.
 
 ## Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.

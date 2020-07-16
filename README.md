@@ -75,16 +75,8 @@ The following instructions will guide you through setting up and running the dem
     2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
     3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
 6. **Setup the Unity scene.**
-    1. The demonstrator scene uses some commercial 3rd party assets that cannot be made available in this repository. Please edit the scene to remove references to these assets, or purchase and/or download these assets from the Unity Asset store and place them in  `{demonstrator}\unityprojet\COUCHUnityProject\Assets\Borg\3rdParty`:
-    - [Devotid Folding Table and Chair](https://assetstore.unity.com/packages/3d/props/furniture/folding-table-and-chair-pbr-111726)
-    - [DigitalKonstrukt Prototyping Pack](https://assetstore.unity.com/packages/3d/prototyping-pack-free-94277)
-    - [o3n Male and Female UMA Races](https://assetstore.unity.com/packages/3d/characters/humanoids/o3n-male-and-female-uma-races-102187)
-    - [o3n Modern Clothing Pack for Male](https://assetstore.unity.com/packages/3d/characters/modern-clothing-pack-for-o3n-male-120544)
-    - [o3n Modern Clothing Pack for Female](https://assetstore.unity.com/packages/3d/characters/modern-clothing-pack-for-o3n-female-116669)
-    - [RecompileDisabler](https://github.com/appetizermonster/Unity3D-RecompileDisabler/tree/master/Assets/RecompileDisabler)
-    - [RootMotion Final IK](https://assetstore.unity.com/packages/tools/animation/final-ik-14290)
-    2. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\COUCHUnityProject`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
-    3. In the Project assets panel (usually bottom-left), navigate to `\Assets\Couch` and double-click the scene `CouchMain.unity`
+    1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
+    1. In the Project assets panel (usually bottom-left), navigate to `\Assets\AgentsUnited\Scenes` and double-click the scene `MainScene.unity`. Unity will now import and set up all assets for your system (this may take a while).
 
 ## Running
 1. **Run OpenMary TTS**: Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat`. Wait until it is up and running on port 59125
@@ -92,7 +84,7 @@ The following instructions will guide you through setting up and running the dem
 3. **Run the Dialogue and Argumentation Framework (DAF)**: Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`. Wait until it is up and running.
 4. **Run ASAP Agent Manager**: Open a command line shell, go to `{demonstrator}\Launchers` and run `ASAP_Superior_Couch_Start_NoAndroid.bat`. Wait until you see the message `“Waiting for AgentSpec…”`.
 5. **Run Greta**: Open a command line shell, go to `{demonstrator}\greta\bin` and type the command `java –jar Modular.jar`. The Greta user interface window will open. From its menus, select File > Open and go to `{demonstrator}\greta\bin\Configurations\GretaUnity\Projects\Council of Coaches`, and select `Council of Coaches - TechnicalDemonstrator.xml`.
-6. **Run the Unity scene**: Open the `COUCHUnityProject` in Unity and open the `CouchMain` scene. Press the Play button (usually at the top) and wait for the agents to take their place (you may be asked to allow firewall access).
+6. **Run the Unity scene**: Open the `AgentsUnitedDemo` in Unity and open the `MainScene` scene. Press the Play button (usually at the top) and wait for the agents to take their place (you may be asked to allow firewall access).
 7. **Run the Intent Planner**: Open a command line shell, go to `{demonstrator}\Launchers` and run `Flipper_Superior_Couch_Start.bat`. Wait until the scenario begins.
 8. **Run the demo**: When the demo begins, the coaches will start talking. An overlay in the Unity scene will display the moves available to the user, from which you can choose how to proceed.
 9. To restart the dialog, you need to restart only the Conversational Intent Planner (ctrl+c, then run it again).

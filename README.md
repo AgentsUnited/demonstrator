@@ -51,34 +51,55 @@ The following instructions will guide you through setting up and running the dem
 
 ## Installation
 
-1. **Clone this repository**. We will refer to its folder as `{demonstrator}`.
-    - Note that on Windows the longpaths parameter needs to be set, using `git config --system core.longpaths true`
-    - You may need to init and get the linked submodules with `git submodule update --init --recursive`
-    - Instead of using Git, you can manually download the code. If you do so, download and place the submodules as well.
-2. **Setup the Dialogue and Argumentation Framework (DAF).**
-    1. Start Docker. Right click the tray icon and go to Settings. Go to Shared Drives and share the main drive. Go to Advanced and set Memory to 4GB (Recommended).
-    2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose pull`
-3. **Setup ASAP and the Intent Planner.**
-    1. Open a command line shell, go to `{demonstrator}\intent-planner` and execute the following commands:
-    2. `ant clean`
-    3. `ant resolve`
-    4. `ant compile`
-4. **Install *Mary TTS***
-    1. Download *Mary TTS* from http://mary.dfki.de/download/index.html, Runtime Package, and unpack the contents in any folder you want. We will refer to this folder as `{marytts}` from now on.
-    2. Go to `{marytts}/bin` and run `maryttscomponent-installer.bat`. From that tool, install the following languages:
-    - `enUS/cmu-slt`
-    - `en-US/cmu-bdl`
-    - `fr/enst-camille`
-    - `fr/enst-camille-hsmm`
-5. **Setup Greta agents.**
-    1. Open a command line shell, go to `{demonstrator}\greta` and execute the command `ant build`
-    2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
-    3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
-6. **Setup the Unity scene.**
-    1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
-    1. In the Project assets panel (usually bottom-left), navigate to `\Assets\AgentsUnited\Scenes` and double-click the scene `MainScene.unity`. Unity will now import and set up all assets for your system (this may take a while).
+<details><summary>Clone this repository</summary>
+
+- Note that on Windows the longpaths parameter needs to be set, using `git config --system core.longpaths true`
+- clone the repository: `git clone https://github.com/AgentsUnited/demonstrator.git` (we will refer to its folder as `{demonstrator}`)
+  ![Screenshot of the git clone command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/git_clone.png?raw=true)
+- Init and get the linked submodules with `git submodule update --init --recursive`
+  ![Screenshot of the git sumbodule command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/sumbodule_update.png?raw=true)
+- Instead of using Git, you can manually download the code. If you do so, download and place the submodules as well.
+</details>
+<details><summary>Setup the Dialogue and Argumentation Framework (DAF)</summary>
+
+1. Start Docker. Right click the tray icon and go to Settings. Go to Shared Drives and share the main drive. Go to Advanced and set Memory to 4GB (Recommended).
+2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose pull`
+3. Then type the command `docker-compose build` to build the various containers. When finished it should look similar to this:
+   ![Screenshot of docker-compose build command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/build.png?raw=true)
+</details>
+<details><summary>Setup ASAP and the Intent Planner</summary>
+
+1. Open a command line shell, go to `{demonstrator}\intent-planner` and execute the following commands:
+2. `ant clean`
+3. `ant resolve` - this downloads all dependencies for this project (including libs native to your operating system, 32/64 bit). This process may take a while. When finished it should state `BUILD SUCCESSFUL` without any errors.
+   ![Screenshot of ant resolve](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/resolving.png?raw=true)
+4. `ant compile` - this compiles all java source files.
+   ![Screenshot of ant compile](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/compiling.png?raw=true)
+</details>
+<details><summary>Install Mary TTS</summary>
+
+1. Download *Mary TTS* from http://mary.dfki.de/download/index.html, Runtime Package, and unpack the contents in any folder you want. We will refer to this folder as `{marytts}` from now on.
+2. Go to `{marytts}/bin` and run `maryttscomponent-installer.bat`. From that tool, install the following languages:
+	- `enUS/cmu-slt`
+	- `en-US/cmu-bdl`
+	- `fr/enst-camille`
+	- `fr/enst-camille-hsmm`
+</details>
+<details><summary>Setup Greta agents</summary>
+
+1. Open a command line shell, go to `{demonstrator}\greta` and execute the command `ant build`
+2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
+3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
+</details>
+<details><summary>Setup the Unity scene</summary>
+
+1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
+1. In the Project assets panel (usually bottom-left), navigate to `\Assets\AgentsUnited\Scenes` and double-click the scene `MainScene.unity`. Unity will now import and set up all assets for your system (this may take a while). When finished your scene in the editor should look similar to this:
+   ![Screenshot of the Unity editor](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/editor.png?raw=true)
+</details>
 
 ## Running
+
 1. **Run OpenMary TTS**: Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat`. Wait until it is up and running on port 59125
 2. **Start Docker**
 3. **Run the Dialogue and Argumentation Framework (DAF)**: Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`. Wait until it is up and running.

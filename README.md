@@ -142,6 +142,7 @@ The agents in the Unity scene will reposition behind the table on the chairs. No
 
 On Windows: double click the `{demonstrator}\Launchers\Flipper_Superior_Couch_Start.bat` from your File Explorer.
 A small login window opens. The default username and password should work for connecting to the default [Wool Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService) used in the demonstrator. If you are hosting your own service you will need to enter different login information.
+
 ![Screenshot of login window](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/login.png?raw=true)
 </details>
 <details><summary>Run the demo</summary>

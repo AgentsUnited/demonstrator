@@ -203,4 +203,9 @@ For example, the following BML will make one of the agents speak "Hello there!":
               </speech>          
 </bml>
 ```
-* If you had installing teh DAF module before and are having problems with empty moves, you may have to clear the Move cache with: `docker exec -it mongodb mongo couch_content --eval “db.move_cache.remove({})”`
+* If you had installed the DAF module before and are having problems with empty moves, you may have to clear the Move cache with: `docker exec -it mongodb mongo couch_content --eval “db.move_cache.remove({})”`
+* If you want to completely delete and rebuild your DAF docker volumes and containers from scratch (this will take a while):
+    1. docker-compose down --volumes
+    2. docker system prune --volumes
+    3. docker-compose build --no-cache
+    4. docker-compose up

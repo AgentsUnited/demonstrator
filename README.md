@@ -40,11 +40,11 @@ The following instructions will guide you through setting up and running the dem
 * [**Docker**](https://www.docker.com/) (Should work with any current version of Docker, including Community for Windows)
     - Select Linux containers during installation
 * [**Java 8 JDK**](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (Update 211)
-    - Make sure you add Java to your Path environment variable.
+    - Make sure you add the Java bin folder to your PATH environment variable.
     - Make sure you set the JAVA_HOME environment variable.
 * [**Ant build system**](https://ant.apache.org/) (Latest version)
-    - Make sure you add Ant to your Path environment variable.
-    - Make sure you set the ANT_HOME environment variable
+    - Make sure you add the Ant bin folder to your PATH environment variable.
+    - Make sure you set the ANT_HOME environment variable.
 * [**Visual C++ Redistributable for Visual Studio**](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) (versions 2013 and/or 2015)
     - This is recommended for Unity, although your Windows installation may already have this
 * Approximately 10GB of disk space and at least 8GB RAM (recommended)
@@ -99,20 +99,69 @@ The following instructions will guide you through setting up and running the dem
 </details>
 
 ## Running
+<details><summary>Run OpenMary TTS</summary>
 
-1. **Run OpenMary TTS**: Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat`. Wait until it is up and running on port 59125
-2. **Start Docker**
-3. **Run the Dialogue and Argumentation Framework (DAF)**: Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`. Wait until it is up and running.
-4. **Run ASAP Agent Manager**: Open a command line shell, go to `{demonstrator}\Launchers` and run `ASAP_Superior_Couch_Start_NoAndroid.bat`. Wait until you see the message `“Waiting for AgentSpec…”`.
-5. **Run Greta**: Open a command line shell, go to `{demonstrator}\greta\bin` and type the command `java –jar Modular.jar`. The Greta user interface window will open. From its menus, select File > Open and go to `{demonstrator}\greta\bin\Configurations\GretaUnity\Projects\Council of Coaches`, and select `Council of Coaches - TechnicalDemonstrator.xml`.
-6. **Run the Unity scene**: Open the `AgentsUnitedDemo` in Unity and open the `MainScene` scene. Press the Play button (usually at the top) and wait for the agents to take their place (you may be asked to allow firewall access).
-7. **Run the Intent Planner**: Open a command line shell, go to `{demonstrator}\Launchers` and run `Flipper_Superior_Couch_Start.bat`. Wait until the scenario begins.
-8. **Run the demo**: When the demo begins, the coaches will start talking. An overlay in the Unity scene will display the moves available to the user, from which you can choose how to proceed.
-9. To restart the dialog, you need to restart only the Conversational Intent Planner (ctrl+c, then run it again).
-    
+Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat`. Wait until it is up and running on port 59125
+</details>
+<details><summary>Run the Dialogue and Argumentation Framework (DAF)</summary>
+
+1. Start Docker
+2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`. Wait until it is up and running.
+   The console should print `Dialogue and Argumentation Framework ready` and look similar to this:
+   ![Screenshot of the DAF console](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/console_running.png?raw=true)
+   If you prefer to use the Docker dashboard, it should look similar to this:
+   ![Screenshot of the Docker dashboard](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/gui_running.png?raw=true)
+
+</details>
+<details><summary>Run ASAP Agent Manager</summary>
+
+On Windows: double click the `{demonstrator}\Launchers\ASAP_Superior_Couch_Start_NoAndroid.bat` from your File Explorer. This opens a command line shell. Wait until you see the message `Waiting for AgentSpec…`.
+
+![Screenshot of ASAP waiting to connect to Unity](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/asap_not_connected.png?raw=true)
+</details>
+<details><summary>Run Greta</summary>
+
+Open a command line shell, go to `{demonstrator}\greta\bin` and type the command `java –jar Modular.jar`. The Greta user interface window will open. From its menus, select File > Open and go to `{demonstrator}\greta\bin\Configurations\GretaUnity\Projects\Council of Coaches`, and select `Council of Coaches - TechnicalDemonstrator.xml`.
+</details>
+<details><summary>Run the Unity scene</summary>
+
+Open the `AgentsUnitedDemo` project in Unity and open the `MainScene` scene. Press the Play button (usually at the top). You may be asked for firewall access.
+The agents briefly appear overlapping in the center of the table.
+
+![Screenshot of agents in Unity before connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/running_not_connected.png?raw=true)
+
+ASAP and Unity will now automatically create a connection and exchange details about the embodiment of the agents, as shown in the ASAP console window.
+
+![Screenshot of ASAP after connecting with Unity](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/asap_connected.png?raw=true)
+
+The agents in the Unity scene will reposition behind the table on the chairs. Note that the agents are now still standing and are overlapping with the chairs, this is normal.
+
+![Screenshot of agents in Unity after connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/running_connected.png?raw=true)
+</details>
+<details><summary>Run the Intent Planner</summary>
+
+On Windows: double click the `{demonstrator}\Launchers\Flipper_Superior_Couch_Start.bat` from your File Explorer.
+A small login window opens. The default username and password should work for connecting to the default [Wool Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService) used in the demonstrator. If you are hosting your own service you will need to enter different login information.
+![Screenshot of login window](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/login.png?raw=true)
+</details>
+<details><summary>Run the demo</summary>
+
+Click the `Login` button. You are now logged in to the Wool Web Service, and your authentication key is automatically shared with the Topic Selection Engine and the Dialogue and Argumentation Framework modules.
+
+After logging in, the demonstrator dialogue is automatically initiated. The coaches in Unity will start by saying "Hi", and will sit down on their chair. An overlay in the Unity scene will display the moves available to the user, from which you can choose how to proceed.
+
+![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/dialogue_in_progress.png?raw=true)
+
+The DAF console will now output information about the ongoing state of the dialogue.
+
+![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/dialogue_in_progress.png?raw=true)
+
+To restart the dialog, you need to restart only the Conversational Intent Planner (press `ctrl+c` in the console window, then `y` to confirm, then run the `Flipper_Superior_Couch_Start.bat` file again).
+</details>
+
 ## Stopping
 1. Unity: press the Play button again (and close the Unity editor).
-2. Command line windows: press ctrl+c
+2. Command line windows: press `ctrl+c` and then `y` to confirm.
 3. DAF: In addition to ctrl+c in its command line window, wait for Docker containers to quit, then type the command `docker-compose down`. (you can now also stop Docker).
 
 ## Settings

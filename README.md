@@ -189,18 +189,6 @@ The role of the user can be changed. The user takes the role of one of the chara
 ```
 - Restart Intent Planner
 	
-### Using MaryTTS in ASAP
-By default, the ASAP agents are configred to use Windows/Microsoft MSAPI voices. If you are using Linux or Mac you may reconfigure to use MaryTTS instead. To do so, modify the various agent specification files that are mentioned in the ASAP launch configuration: `intent-planner\resource\couchlaunch.json`. By default, `multiAgentSpecs/uma/UMA1.xml` and `multiAgentSpecs/uma/UMA3.xml` are loaded for agent COUCH_M_1 and COUCH_M_2, respectively. In the agent spec modify the loaders `ttsbinding` and `speechengine` to load MaryTTS instead:
-```
-<Loader id="ttsbinding" loader="asap.marytts5binding.loader.MaryTTSBindingLoader">
-	<PhonemeToVisemeMapping resources="Humanoids/shared/phoneme2viseme/" filename="sampaen2disney.xml"/>
-</Loader>
-<Loader id="speechengine" loader="asap.speechengine.loader.SpeechEngineLoader" requiredloaders="facelipsync,ttsbinding">
-	<Voice factory="WAV_TTS" voicename="dfki-spike"/>
-</Loader>
-```
-Then, add the selected voice as a dependency in the `ivy.xml` file (For example: `<dependency org="marytts"	name="voice-dfki-spike" rev="latest.release" />`) and run `ant resolve` and `ant compile` in a terminal at the root of the `intent-planner` directory.
-Note that ASAP uses an internal embedded MaryTTS instance, which is separate from the MaryTTS standalone server required by Greta.
 
 ## Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.

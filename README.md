@@ -55,9 +55,9 @@ The following instructions will guide you through setting up and running the dem
 
 - Note that on Windows the longpaths parameter needs to be set, using `git config --system core.longpaths true`
 - clone the repository: `git clone https://github.com/AgentsUnited/demonstrator.git` (we will refer to its folder as `{demonstrator}`)
-  ![Screenshot of the git clone command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/git_clone.png?raw=true)
+  ![Screenshot of the git clone command](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/git_clone.png?raw=true)
 - Init and get the linked submodules with `git submodule update --init --recursive`
-  ![Screenshot of the git sumbodule command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/sumbodule_update.png?raw=true)
+  ![Screenshot of the git sumbodule command](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/sumbodule_update.png?raw=true)
 - Instead of using Git, you can manually download the code. If you do so, download and place the submodules as well.
 </details>
 <details><summary>Setup the Dialogue and Argumentation Framework (DAF)</summary>
@@ -65,16 +65,16 @@ The following instructions will guide you through setting up and running the dem
 1. Start Docker. Right click the tray icon and go to Settings. Go to Shared Drives and share the main drive. Go to Advanced and set Memory to 4GB (Recommended).
 2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose pull`
 3. Then type the command `docker-compose build` to build the various containers. When finished it should look similar to this:
-   ![Screenshot of docker-compose build command](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/build.png?raw=true)
+   ![Screenshot of docker-compose build command](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/build.png?raw=true)
 </details>
 <details><summary>Setup ASAP and the Intent Planner</summary>
 
 1. Open a command line shell, go to `{demonstrator}\intent-planner` and execute the following commands:
 2. `ant clean`
 3. `ant resolve` - this downloads all dependencies for this project (including libs native to your operating system, 32/64 bit). This process may take a while. When finished it should state `BUILD SUCCESSFUL` without any errors.
-   ![Screenshot of ant resolve](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/resolving.png?raw=true)
+   ![Screenshot of ant resolve](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/intent-planner/resolving.png?raw=true)
 4. `ant compile` - this compiles all java source files.
-   ![Screenshot of ant compile](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/compiling.png?raw=true)
+   ![Screenshot of ant compile](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/intent-planner/compiling.png?raw=true)
 </details>
 <details><summary>Install Mary TTS</summary>
 
@@ -95,7 +95,7 @@ The following instructions will guide you through setting up and running the dem
 
 1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
 1. In the Project assets panel (usually bottom-left), navigate to `\Assets\AgentsUnited\Scenes` and double-click the scene `MainScene.unity`. Unity will now import and set up all assets for your system (this may take a while). When finished your scene in the editor should look similar to this:
-   ![Screenshot of the Unity editor](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/editor.png?raw=true)
+   ![Screenshot of the Unity editor](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/unityproject/editor.png?raw=true)
 </details>
 
 ## Running
@@ -108,16 +108,16 @@ Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat
 1. Start Docker
 2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`. Wait until it is up and running.
    The console should print `Dialogue and Argumentation Framework ready` and look similar to this:
-   ![Screenshot of the DAF console](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/console_running.png?raw=true)
+   ![Screenshot of the DAF console](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/console_running.png?raw=true)
    If you prefer to use the Docker dashboard, it should look similar to this:
-   ![Screenshot of the Docker dashboard](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/gui_running.png?raw=true)
+   ![Screenshot of the Docker dashboard](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/gui_running.png?raw=true)
 
 </details>
 <details><summary>Run ASAP Agent Manager</summary>
 
 On Windows: double click the `{demonstrator}\Launchers\ASAP_Superior_Couch_Start_NoAndroid.bat` from your File Explorer. This opens a command line shell. Wait until you see the message `Waiting for AgentSpec…`.
 
-![Screenshot of ASAP waiting to connect to Unity](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/asap_not_connected.png?raw=true)
+![Screenshot of ASAP waiting to connect to Unity](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/intent-planner/asap_not_connected.png?raw=true)
 </details>
 <details><summary>Run Greta</summary>
 
@@ -128,22 +128,22 @@ Open a command line shell, go to `{demonstrator}\greta\bin` and type the command
 Open the `AgentsUnitedDemo` project in Unity and open the `MainScene` scene. Press the Play button (usually at the top). You may be asked for firewall access.
 The agents briefly appear overlapping in the center of the table.
 
-![Screenshot of agents in Unity before connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/running_not_connected.png?raw=true)
+![Screenshot of agents in Unity before connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/unityproject/running_not_connected.png?raw=true)
 
 ASAP and Unity will now automatically create a connection and exchange details about the embodiment of the agents, as shown in the ASAP console window.
 
-![Screenshot of ASAP after connecting with Unity](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/asap_connected.png?raw=true)
+![Screenshot of ASAP after connecting with Unity](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/intent-planner/asap_connected.png?raw=true)
 
 The agents in the Unity scene will reposition behind the table on the chairs. Note that the agents are now still standing and are overlapping with the chairs, this is normal.
 
-![Screenshot of agents in Unity after connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/running_connected.png?raw=true)
+![Screenshot of agents in Unity after connecting with ASAP](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/unityproject/running_connected.png?raw=true)
 </details>
 <details><summary>Run the Intent Planner</summary>
 
 On Windows: double click the `{demonstrator}\Launchers\Flipper_Superior_Couch_Start.bat` from your File Explorer.
 A small login window opens. The default username and password should work for connecting to the default [Wool Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService) used in the demonstrator. If you are hosting your own service you will need to enter different login information.
 
-![Screenshot of login window](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/intent-planner/login.png?raw=true)
+![Screenshot of login window](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/intent-planner/login.png?raw=true)
 </details>
 <details><summary>Run the demo</summary>
 
@@ -151,11 +151,11 @@ Click the `Login` button. You are now logged in to the Wool Web Service, and you
 
 After logging in, the demonstrator dialogue is automatically initiated. The coaches in Unity will start by saying "Hi", and will sit down on their chair. An overlay in the Unity scene will display the moves available to the user, from which you can choose how to proceed.
 
-![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/unityproject/dialogue_in_progress.png?raw=true)
+![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/unityproject/dialogue_in_progress.png?raw=true)
 
 The DAF console will now output information about the ongoing state of the dialogue.
 
-![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/screenshots/demonstrator/daf/dialogue_in_progress.png?raw=true)
+![Screenshot of Unity with a running dialogue](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/dialogue_in_progress.png?raw=true)
 
 To restart the dialog, you need to restart only the Conversational Intent Planner (press `ctrl+c` in the console window, then `y` to confirm, then run the `Flipper_Superior_Couch_Start.bat` file again).
 </details>

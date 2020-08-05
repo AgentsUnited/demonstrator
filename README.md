@@ -2,7 +2,7 @@ The Agents United Open Platform allows you to build a system of multiple virtual
 This repository contains a demonstrator af several coaching agents for different health domains.
 The Agents United platform and this demonstrator are the outcome of the [Council of Coaches european research project](https://council-of-coaches.eu/)
 
-#### Repositories
+# Repositories
 
 Each of the different modules that compose the Agents United platform has its own repository. Some modules are hosted and maintained here in Agents United while others are external, developed and hosted in 3rd party repositories.
 
@@ -19,15 +19,15 @@ Other modules hosted elsewhere:
 * [HMI Build](https://github.com/ArticulatedSocialAgentsPlatform/hmibuild): Multi-platform build system by HMI - University of Twente
 * [WOOL Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService): Knowledge base and dialogue management web service of the [WOOL Platform](https://github.com/woolplatform)
 
-#### Architecture
+# Architecture
 
 If you are interested in figuring out how the entire Agents United platform works you can check out the architecture documentation and diagrams in the [Architecture repository](https://github.com/AgentsUnited/architecture)
 
-#### License
+# License
 
 The modules hosted in Agents United are licensed under the GNU Lesser General Public License v3.0 (LGPL 3.0) except when otherwise is stated. External modules linked here have their own licenses.
 
-#### Instructions
+# Instructions
 
 The following instructions will guide you through setting up and running the demonstrator. You can find a list of the latest hotfixes and solutions for possible problems you may come across at the end of this Readme.
 
@@ -165,15 +165,15 @@ To restart the dialog, you need to restart only the Conversational Intent Planne
 2. Command line windows: press `ctrl+c` and then `y` to confirm.
 3. DAF: In addition to ctrl+c in its command line window, wait for Docker containers to quit, then type the command `docker-compose down`. (you can now also stop Docker).
 
-## Settings
-### Enabling user input
+# Settings
+## Enabling user input
 To change the demo between 'auto play', where the agents perform their own conversation without user input, or user input, where the user can play the role of patient (i.e. activate the UI):
 - In the Flipper template file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
 - Change in the information state the variable "uidefaults" and update the identifier to set the agent that should be controlled through the interface
 `"uidefaults": {"actors": [{ "identifier":"User", "controlledBy": ["unityTest", "tablet"] }]}`
 - Restart Conversational Intent Planner
 
-### Changing the role of the user
+## Changing the role of the user
 The role of the user can be changed. The user takes the role of one of the characters in the dialogue. Currently it is set up as the patient. To change the role of the user (i.e. the moves of the agent that the UI will show):
 - Open the file: `{demonstrator}\intent-planner\resource\couchtemplates\DialogueLoader.xml`
 - Alter the `dialogueActors` variable to change roles assigned to any of the agents or the user
@@ -190,7 +190,7 @@ The role of the user can be changed. The user takes the role of one of the chara
 - Restart Intent Planner
 	
 
-## Latest fixes and troubleshooting
+# Latest fixes and troubleshooting
 * By default the Demonstrator requires Windows TTS US voices: Mark, David, Zira. install them from Windows TTS Settings and check out how to set them up with [this wiki](https://github.com/hmi-utwente/HmiASAPWiki/wiki/MS-API-Voices). If you do not have a particular voice installed, the agents should use the default selected voice in "Windows Settings -> Time & Language -> Speech -> Voices" settings instead.
 * To test the Windows voices: What you can try is run `ASAP_Superior_Couch_Start_NoAndroid.bat` from the Launchers folder and the Unity scene (do not run Conversational Intent Planner!). Once these are connected you run `BmlWindow_ASAP_Start.bat` which opens a window where you can input BML and send it to ASAP. 
 If all is well the agent should talk. If not, try a couple more times and check the console windows for any errors or warnings.

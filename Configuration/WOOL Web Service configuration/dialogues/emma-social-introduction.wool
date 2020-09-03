@@ -1,0 +1,87 @@
+title: Start
+tags: 
+speaker: Emma
+colorID: 0
+position: -686,347
+---
+<<if $userFirstName == "User">> // Previously undisclosed
+Hi, my name is Emma. I am one of your coaches. And you are?
+<<else>>
+Hi, my name is Emma. Nice to meet you, $userFirstName!
+<<endif>>
+
+<<if $userFirstName == "User">> // Previously undisclosed
+    [[First name: <<input type="text" value="$userFirstName">>.|Role]]
+<<else>>
+    [[It is my pleasure, Emma.|Role]]
+<<endif>>
+===
+title: End
+tags: 
+speaker: Emma
+colorID: 0
+position: 859,336
+---
+
+===
+title: Role
+tags: 
+speaker: Emma
+colorID: 0
+position: -328,344
+---
+I am your social coach, and I will help you with performing social activities and difficulties you might encounter in doing so.
+
+<<if $coachOliviaEnabled >>
+    [[RoleCommentOlivia]]
+<<elseif $coachCarlosEnabled >>
+    [[RoleCommentCarlos]]
+<<else>>
+    [[RoleNoComment]]
+<<endif>>
+===
+title: RoleCommentOlivia
+tags: 
+speaker: Olivia
+colorID: 0
+position: -28,194
+---
+Emma is darn good at what she does too. We can call be happy she is part of the team!
+
+[[RoleNoComment]]
+===
+title: RoleCommentCarlos
+tags: 
+speaker: Carlos
+colorID: 0
+position: -31,519
+---
+Emma is quite the social butterfly. I am sure she can help you out with any social issues!
+
+[[RoleNoComment]]
+===
+title: Role2
+tags: 
+speaker: Emma
+colorID: 0
+position: 588,338
+---
+<<set $socUserCompletedIntroduction = true>>
+I look forward to getting to work with you from here on, $userFirstName!
+
+[[Thank you Emma.|End]]
+===
+title: RoleNoComment
+tags: 
+speaker: Emma
+colorID: 0
+position: 291,340
+---
+<<if $Commented == true>>
+Stop it, you are making me blush! Ahem. As your social coach, you can always come talk with me if you need any advice or suggestions for doing some social activities.
+<<else>>
+As your social coach, you can always come talk with me if you need any advice or suggestions for doing some social activities.
+<<endif>>
+
+[[Role2]]
+===

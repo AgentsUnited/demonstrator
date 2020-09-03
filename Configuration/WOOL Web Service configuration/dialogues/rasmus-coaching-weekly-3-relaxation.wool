@@ -1,0 +1,126 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: -39,199
+---
+Relaxing enough is just as important as enough physical activity. A good night of sleep can only be achieved if you had enough rest during the day.
+
+[[How do you achieve that?|Rustmoment1]]
+===
+title: Rustmoment1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 286,198
+---
+Schedule moments to relax based on your activities, for example, after physical activity or a stressful situation.
+
+[[Rustmoment2]]
+===
+title: Rustmoment2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 612,198
+---
+Build in about 3 moments to relax of 5-10 minutes during the day. If you are inside a lot, go outside during your relax moment.
+
+[[Rustmoment3]]
+===
+title: Rustmoment3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 943,193
+---
+Don't do anything at all during a relax moment, listen to music or think about a good memory.
+
+[[What else can you do?|Oefening1]]
+[[Okay.|Oefening2]]
+===
+title: Oefening1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1255,58
+---
+You can also do a relaxation exercise. An example is teaching yourself a slow stomach breathing.
+
+[[Oefening3]]
+===
+title: Oefening2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1257,325
+---
+Besides listening to music, you can also do a relaxation exercise during your relax moment. For example, teaching yourself a slow stomach breathing.
+
+[[Oefening3]]
+===
+title: Oefening3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1566,192
+---
+The stomach breathing forms the basis of all relaxation exercises and yoga. Yoga can help working on your breathing.
+
+[[Can you help me practice?|VierOefeningen1]]
+[[Okay.|VierOefeningen2]]
+===
+title: VierOefeningen1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1895,36
+---
+For sure. There are four exercises you can choose from. Do you want to try one?
+<<set $cpUserCompletedWeek3OntspanningOefening = true>>
+
+[[Slow stomach breathing.|rasmus-coaching-exercise-stomach.Start]]
+[[Tense and relax exercise.|rasmus-coaching-exercise-relax.Start]]
+[[Mindfulness exercise.|rasmus-coaching-exercise-mindful.Start]]
+[[No, I want to continue.|EindeOntspanning]]
+===
+title: VierOefeningen2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1904,322
+---
+The next four exercises might help you. Do you want to try one?
+<<set $cpUserCompletedWeek3OntspanningOefening = true>>
+
+[[Slow stomach breathing.|rasmus-coaching-exercise-stomach.Start]]
+[[Tense and relax exercise.|rasmus-coaching-exercise-relax.Start]]
+[[Mindfulness exercise.|rasmus-coaching-exercise-mindful.Start]]
+[[No, I want to continue.|EindeOntspanning]]
+===
+title: EindeOntspanning
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2240,172
+---
+I hope that relaxation exercises help you relax and sleep better. You can always find the exercises later.
+<<set $cpUserCompletedWeek3Ontspanning = true>>
+
+<<if $cpUserCompletedWeek3>>
+[[I want to repeat something.|rasmus-coaching-weekly-3-introduction.Start]]
+[[I want to quit.|End]]
+<<else>>
+[[I hope so too.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[Let's continue.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[I want to quit.|End]]
+<<endif>>
+===
+title: End
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2570,169
+---
+
+===

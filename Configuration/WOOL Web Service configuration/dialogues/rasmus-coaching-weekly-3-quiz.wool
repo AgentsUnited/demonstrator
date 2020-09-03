@@ -1,0 +1,196 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: -47,243
+---
+To find out how much you remember, we will do a short quiz. Ready?
+<<set $cpUserWeek3ToetsScore = 0>>
+
+[[Yes, I am ready.|Vraag1]]
+[[I want to quit.|End]]
+===
+title: Vraag1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 284,239
+---
+Physical activity has a positive effect on your health. What is an example of such a positive effect?
+
+[[Accumulation of lactic acid and waste products.|Vraag1Fout]]
+[[Lower cholesterol and blood pressure.|Vraag1Goed]]
+===
+title: Vraag1Goed
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 592,14
+---
+Very good. Other positive effects are better blood flow, stronger heart, lungs, and bones, and a good mood.
+<<set $cpUserWeek3ToetsScore = $cpUserWeek3ToetsScore + 1>>
+
+[[Vraag2]]
+===
+title: Vraag1Fout
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 598,394
+---
+No, those are negative effects of muscle tension. Positive effects of physical activity are better blood flow, stronger heart, lungs, and bones, and a good mood.
+
+[[Vraag2]]
+===
+title: Vraag2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 995,205
+---
+How long consecutively do you minimally need to be active to notice positive effects?
+
+[[60 minutes.|Vraag2Fout]]
+[[20 minutes.|Vraag2Goed]]
+===
+title: Vraag2Goed
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1327,6
+---
+Yes, 20 minutes of physical activity is already good for your health and sleep. You can exercise, but walking and cycling is also good.
+<<set $cpUserWeek3ToetsScore = $cpUserWeek3ToetsScore + 1>>
+
+[[Vraag3]]
+===
+title: Vraag2Fout
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1329,370
+---
+Longer is better, but 20 minutes is already enough. You can exercise, but but walking and cycling is also good.
+
+[[Vraag3]]
+===
+title: Vraag3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1714,188
+---
+Relaxing enough during the day helps to sleep better. How many relax moments should you schedule?
+
+[[3 of 5-10 minutes.|Vraag3Goed]]
+[[2 of 25-30 minutes.|Vraag3Fout]]
+===
+title: Vraag3Goed
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2060,37
+---
+That's right. Schedule the relax moments based on your activities and really don't do anything during such a moment.
+<<set $cpUserWeek3ToetsScore = $cpUserWeek3ToetsScore + 1>>
+
+[[Vraag4]]
+===
+title: Vraag3Fout
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2061,381
+---
+It is better to spread and schedule 3 shorter relax moments. Schedule the moments based on your activities and really don't do anything during such a moment.
+
+[[Vraag4]]
+===
+title: Vraag4
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2441,191
+---
+Stress is not only bad. Why can stress also be good?
+
+[[It helps you relax after a deadline.|Vraag4Fout]]
+[[It helps you work hard before a deadline.|Vraag4Goed]]
+===
+title: Vraag4Goed
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2803,37
+---
+Thanks to stress you are alert and active, and you can work better for a deadline. So, good answer!
+
+<<set $cpUserWeek3ToetsScore = $cpUserWeek3ToetsScore + 1>>
+
+[[Vraag5]]
+===
+title: Vraag4Fout
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2802,377
+---
+Thanks to stress you are alert and you can work better under pressure, so also for a deadline. You can only relax when the stress is gone...
+
+[[Vraag5]]
+===
+title: Vraag5
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3142,203
+---
+To sleep well, you need to reduce stress. How can you reduce stress?
+
+[[High intensity exercise before going to sleep.|Vraag5Fout]]
+[[Avoid exposure to light before going to sleep.|Vraag5Goed]]
+===
+title: Vraag5Goed
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3472,-1
+---
+Yes, exactly. Relax before going to bed. Don't do mentally or physically stressful activities. You could listen to music, read, or do a puzzle.
+<<set $cpUserWeek3ToetsScore = $cpUserWeek3ToetsScore + 1>>
+
+[[EindeToets]]
+===
+title: Vraag5Fout
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3474,323
+---
+No, you should relax and avoid light exposure to reduce stress. For example, listen to music, read, or meditate.
+
+[[EindeToets]]
+===
+title: EindeToets
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3784,181
+---
+That's it! Let's see. You answered $cpUserWeek3ToetsScore out of 5 questions correctly. This was the topic physical activity and relaxation. Do you want to repeat something?
+<<set $cpUserCompletedWeek3 = true>>
+<<set $cpUserCompletedWeek3Activiteit = false>>
+<<set $cpUserCompletedWeek3Ontspanning = false>>
+<<set $cpUserCompletedWeek3Stress = false>>
+
+[[Yes, I want to repeat something.|rasmus-coaching-weekly-3-introduction.Start]]
+[[I want to quit.|End]]
+===
+title: End
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 4087,181
+---
+
+===

@@ -1,0 +1,264 @@
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: 851,378
+---
+<<if $paCurrentGoalType == "steps">>
+    Now we need to decide how many steps would be a challenging but achievable goal for you in the long-term.
+
+    [[SetLongTermGoalValueSteps]]
+<<elseif $paCurrentGoalType == "minutes">>
+    Now we need to decide how many minutes would be a challenging but achievable goal for you in the long-term.
+
+    [[SetLongTermGoalValueMinutes]]
+<<endif>>
+===
+title: SetLongTermGoalValueSteps
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1230,254
+---
+<<if $userAge >= 65 >>
+    There is a general trend to recommend 10.000 steps as a daily goal. However, for people aged 65 or above, this value is often reduced to 7.500 steps. Should we start with a long-term goal of 7.500 steps?
+
+    [[Okay, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 7500>>]]
+    
+<<elseif $userAge >= 18 >>
+    There is a general trend to recommend 10.000 steps as a daily goal. Should we strive to achieve 10.000 steps in the long-run?
+
+    [[Okay, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 10000>>]]
+
+<<else>>
+    It is often suggested that people as young as yourself should reach 13.000 steps a day. Should we try 13.000 steps in the long-run?
+
+    [[Okay, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 13000>>]]
+
+<<endif>>
+
+[[That sounds too easy, can we set my goal a bit higher?|SuggestHigherLongTermGoal]]
+[[That sounds difficult, could we set my goal a bit lower?|SuggestLowerLongTermGoal]]
+===
+title: SetLongTermGoalValueMinutes
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1230,566
+---
+<<if $userAge >= 65 >>
+	The World Health Organization recommends that people aged above 65 years old participate in at least 2.5 hours of moderate to high intensity physical activity per week. Think of 3 sessions a bit shorter than 1 hour per week in which your heart rate is elevated. What do you think about this goal?
+
+    [[It sounds good, let's do that!|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 150>>]]
+
+<<elseif $userAge >= 18 >>
+	The World Health Organization recommends that adults participate in at least 150 minutes of moderate to high intensity physical activity per week. Think of 3 sessions a bit shorter than 1 hour per week in which your heart rate is elevated. What do you think about this goal?
+
+    [[It sounds good, let's do that!|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 150>>]]
+
+<<elseif $userAge < 18 >>
+
+	The World Health Organization recommends that those aged between 5 and 17 years old participate in at least 60 minutes of moderate to high intensity physical activity per day. What do you think about this goal?
+
+    [[It sounds good, let's do that!|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 60>>]]
+
+<<endif>>
+
+[[That sounds too easy, can we set my goal a bit higher?|SuggestHigherLongTermGoal]]
+[[That sounds difficult, could we set my goal a bit lower?|SuggestLowerLongTermGoal]]
+===
+title: LongTermGoalAccepted
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2321,369
+---
+<<set $paUserLongTermGoalSet = true>>
+
+<<if $paCurrentGoalType == "steps">>
+
+    That is great! So, we are working towards $paLongTermStepsGoal steps per day on the long run.
+
+<<elseif $paCurrentGoalType == "minutes">>
+
+    <<if $userAge >= 18 >>
+    
+        That is great! So, we are working towards $paLongTermMinutesGoal minutes of moderate to high intensity physical activity per week.
+
+    <<else>>
+
+        That is great! So, we are working towards $paLongTermMinutesGoal minutes of moderate to high intensity physical activity per day.
+
+    <<endif>>
+
+<<endif>>
+
+<<if $coachEmmaEnabled>>
+
+    [[SocialActivitiesPhysicalActivity]]
+
+<<else>>
+
+    [[SetLongTermGoalEnd]]
+
+<<endif>>
+===
+title: SuggestHigherLongTermGoal
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1708,0
+---
+<<if $paCurrentGoalType == "steps">>
+
+    <<if $userAge >= 65 >>
+        Wonderful to hear that you are willing to try a bit more! So, what about 10.000 steps per day? Remember, we are talking about long-term goals, not your goal for tomorrow.
+
+        [[Yes, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 10000>>]]
+    <<elseif $userAge >= 18 >>
+        Great to hear you're willing to step it up! Okay, what about 12.000 steps per day? Remember, we are talking about long-term goals, not your goal for tomorrow.
+
+        [[Yes, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 12000>>]]
+    <<else>>
+        Nice! Let's step it up some more then. What about 15.000 steps per day? Remember, we are talking about long-term goals, not your goal for tomorrow.
+        
+        [[Yes, let's do that!|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 15000>>]]
+    <<endif>>
+
+    [[That might be too high, can we go lower?|SetLongTermGoalValueSteps]]
+
+<<elseif $paCurrentGoalType == "minutes">>
+
+    <<if $userAge >= 18>>
+        Okay, well... the World Health Organization suggests that for extra health benefits you can double the time on moderate to high intensity physical activity. What about aiming for 300 minutes per week?
+
+        [[Yes, let's do that!|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 300>>]]
+
+    <<else>>
+        Okay, what about 120 minutes of moderate to high intensity physical activity per day?
+        
+        [[Yes, let's do that!|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 120>>]]
+    <<endif>>
+
+    [[That might be too high, can we go lower?|SetLongTermGoalValueMinutes]]
+
+<<endif>>
+===
+title: SuggestLowerLongTermGoal
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1714,836
+---
+<<if $paCurrentGoalType == "steps">>
+
+    <<if $userAge >= 65>>
+        Ok, then I would like to suggest a long-term goal of 5.000 steps per day. Is that ok?
+
+        [[Yes, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 5000>>]]
+    <<elseif $userAge >= 18 >>
+        Ok, then I would like to suggest a long-term goal of 7.500 steps per day. Is that ok?
+
+        [[Yes, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 7500>>]]
+    <<else>>
+        Ok, then I would like to suggest a long-term goal of 10.000 steps per day. Is that ok?
+
+        [[Yes, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 10000>>]]
+    <<endif>>
+
+    [[I still think that is too high.|SuggestLowestLongTermGoal]]
+    [[Oh, no, I think that is too low.|SetLongTermGoalValueSteps]]
+
+<<elseif $paCurrentGoalType == "minutes">>
+
+    <<if $userAge >= 18>>
+        Ok, then I would like to suggest a long-term goal of 120 minutes of moderate to high physical activity intensity per week. Remember that we are discussing the long-term goal, not your goal for next week. Is that ok?
+
+        [[Yes, let's do that.|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 120>>]]
+    <<else >>
+        Ok, then I would like to suggest a long-term goal of 40 minutes of moderate to high physical activity intensity per day. Remember that we are discussing the long-term goal, not your goal for next week. Is that ok?
+
+        [[Yes, let's do that.|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 40>>]]
+    <<endif>>
+
+    [[I still think that is too high.|SuggestLowestLongTermGoal]]
+    [[Oh, no, I think that is too low.|SetLongTermGoalValueMinutes]]
+
+<<endif>>
+===
+title: SuggestLowestLongTermGoal
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2016,833
+---
+<<if $paCurrentGoalType == "steps">>
+    
+    <<if $userAge >= 65 >>
+        Let's just start with 4.500 steps per day, and we see how it goes. If it does not work for you, we can adjust it next week.
+        
+        [[Okay, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 4500>>]]
+    <<elseif $userAge >= 18 >>
+        Let's just start with 7.000 steps per day, and we see how it goes. If it does not work for you, we can adjust it next week.
+        
+        [[Okay, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 7000>>]]
+    <<else>>
+        Let's just start with 9.000 steps per day, and we see how it goes. If it does not work for you, we can adjust it next week.
+        
+        [[Okay, let's do that.|LongTermGoalAccepted|<<set $paLongTermStepsGoal = 9000>>]]
+    <<endif>>
+
+<<elseif $paCurrentGoalType == "minutes">>
+
+    <<if $userAge >= 18>>
+        Let's just start with 60 minutes per week, and we see how it goes. If it does not work for you, we can adjust it next week.
+
+        [[Okay, let's do that.|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 60>>]]
+    <<else>>
+        Let's just start with 30 minutes per day, and we see how it goes. If it does not work for you, we can adjust it next week.
+
+        [[Okay, let's do that.|LongTermGoalAccepted|<<set $paLongTermMinutesGoal = 30>>]]
+    <<endif>>
+
+<<endif>>
+
+[[Maybe I can do a bit more...|SuggestLowerLongTermGoal]]
+===
+title: SocialActivitiesPhysicalActivity
+tags: 
+speaker: Emma
+colorID: 0
+position: 2606,369
+---
+Group activities are a great way to motivate you to reach your physical activity goal. You might even meet some interesting new people!
+
+[[CommentSocialActivitiesPhysicalActivity]]
+===
+title: End
+tags: 
+speaker: Olivia
+colorID: 0
+position: 3139,367
+---
+
+===
+title: CommentSocialActivitiesPhysicalActivity
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2858,373
+---
+Yes Emma that's true. Now our next step is to set a smaller and achievable short-term goal together, so we can slowly work up to to your final goal!
+
+[[End]]
+===
+title: SetLongTermGoalEnd
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2853,16
+---
+Now our next step is to set a smaller and achievable short-term goal together, so we can slowly work up to to your final goal!
+
+[[End]]
+===

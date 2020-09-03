@@ -1,0 +1,164 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 18,251
+---
+Stress can play a big role with insomnia, but it is also important for the body.
+<<set $cpUserCompletedWeek3StressLichaam = false>>
+<<set $cpUserCompletedWeek3StressGevolgen = false>>
+
+
+[[Positief1]]
+===
+title: Positief1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 313,246
+---
+Thanks to stress you are capable to be active directly and flee, or work better when you have a deadline.
+
+[[What happens in my body?|Lichaam1]]
+[[What are the negative consequences?|Gevolgen1]]
+===
+title: Lichaam1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 622,30
+---
+Through stress, the waking system is stimulated and the sleep system is inhibited. The stress hormones adrenaline and cortisol are released.
+
+[[Lichaam2]]
+===
+title: Lichaam2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 957,24
+---
+Those stress hormones increase heart rate, breathing, blood pressure, and muscle tension.
+
+<<set $cpUserCompletedWeek3StressLichaam = true>>
+
+<<if !$cpUserCompletedWeek3StressGevolgen>>
+[[What are the consequences?|Gevolgen1]]
+<<else>>
+[[How can you avoid stress?|Voorkomen1]]
+<<endif>>
+
+===
+title: Gevolgen1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 621,336
+---
+Too much stress is bad for your health. It increases risk of for example, heart and vascular diseases and could disrupt diabetes.
+
+[[Gevolgen2]]
+===
+title: Gevolgen2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 957,330
+---
+Through stress, you could also develop a burn out and it also plays a role with insomnia.
+
+[[Gevolgen3]]
+===
+title: Gevolgen3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1298,323
+---
+Stress activates the waking system, resulting in you being more alert, this you unwillingly take with you to bed, resulting in trouble sleeping.
+
+<<set $cpUserCompletedWeek3StressGevolgen = true>>
+
+<<if !$cpUserCompletedWeek3StressLichaam>>
+[[What happens in my body?|Lichaam1]]
+<<else>>
+[[How can you avoid stress?|Voorkomen1]]
+<<endif>>
+===
+title: Voorkomen1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1625,145
+---
+By relaxing consciously, you can inhibit the release of stress hormones. I have three tips to sleep better by reducing stress.
+
+[[Tip 1.|Voorkomen2]]
+===
+title: Voorkomen2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1920,146
+---
+Tip 1: Avoid light stimuli in the hour before going to bed.
+
+[[Tip 2.|Voorkomen3]]
+===
+title: Voorkomen3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2243,149
+---
+Tip 2: Don't do high intensity physical activity 3 hours before going to bed.
+
+[[Tip 3.|Voorkomen4]]
+===
+title: Voorkomen4
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2565,146
+---
+Tip 3: Don't do mentally stressful activites before going to sleep, such as working on the computer, watching tv, reading a thriller, or emotional activities.
+
+[[But what can I do?|Voorkomen5]]
+[[Okay.|Voorkomen5]]
+===
+title: Voorkomen5
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2925,137
+---
+You can go for an easy walk, have sex, listen to music, do a puzzle, read a book, draw, meditate, talk, or receive/give a massage before going to bed.
+
+[[Okay.|EindeStress]]
+===
+title: EindeStress
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3323,135
+---
+So, stress helps to be alert, but too much stress is not good. Ensure enough relaxing during the day and before going to bed.
+<<set $cpUserCompletedWeek3Stress = true>>
+
+<<if $cpUserCompletedWeek3>>
+[[I want to repeat something.|rasmus-coaching-weekly-3-introduction.Start]]
+[[I want to quit.|End]]
+<<else>>
+[[Thanks for the tips.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[Let's continue.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[I want to quit.|End]]
+<<endif>>
+===
+title: End
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 3692,151
+---
+
+===

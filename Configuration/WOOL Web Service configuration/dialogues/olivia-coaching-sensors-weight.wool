@@ -1,0 +1,100 @@
+title: OpenApp
+tags: 
+speaker: Olivia
+colorID: 0
+position: 583,228
+---
+Very well! Open the COUCH Bluetooth Sensor app and take a weight measurement.
+
+[[But wait! I don't have the app!|GetApp]]
+[[I still don't know how to use the app, can you help me?|AppInstructions]]
+[[OK I will do it.|EndMeasure]]
+===
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: 168,227
+---
+It seems we still don't have any record of your weight. Do you want to measure it now?
+
+[[Yes, let's do it now|OpenApp]]
+[[No, I would like to do it later|EndLater]]
+===
+title: EndLater
+tags: 
+speaker: Olivia
+colorID: 0
+position: 584,461
+---
+That's fine, I will remind you about it later.
+===
+title: GetApp
+tags: 
+speaker: Olivia
+colorID: 0
+position: 923,224
+---
+Open the Play Store and search for the "COUCH Sensor app".
+
+[[AppInstructions]]
+===
+title: AppInstructions
+tags: 
+speaker: Olivia
+colorID: 0
+position: 926,465
+---
+I will walk you through the steps to take the measurement.
+First of all, is your Bluetooth weight scale paired to your phone?
+
+[[Yes.|AppInstructionsSteps]]
+[[No.|AppInstructionsBT]]
+[[I don't have a wieght scale!|AppInstructionsScale]]
+===
+title: EndMeasure
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1492,-36
+---
+I'll wait for you to take the measurement.
+===
+title: AppInstructionsSteps
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1271,224
+---
+Open the app and tap the button "Weight Scale".
+Step into the weight scale and wait for the measurement to appear in the scale display.
+The value should appear in your phone screen. It will be sent to me automatically right away.
+You're done!
+
+[[EndMeasure]]
+===
+title: AppInstructionsBT
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1274,463
+---
+Set the weight scale to pairing mode by holding the button beneath it until you hear a beep.
+Go to your phone Bluetooth settings and enable discovery.
+This is usually done automatically when you go to Bluetooth settings.
+You should see a list of nearby devices.
+Select the AND Weight Scale, and it shuould be ready!
+
+[[AppInstructionsSteps]]
+===
+title: AppInstructionsScale
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1272,705
+---
+You should have received a compatible weight scale from your COUCH service provider.
+The best choice for a compatible weight scale is A&D Medical Bluetooth Low Energy Weight Scale UC-BLE352.
+
+[[AppInstructionsBT]]
+===

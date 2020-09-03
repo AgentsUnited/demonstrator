@@ -1,0 +1,62 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: -29,189
+---
+<<if !$cpUserCompletedWeek3>>
+Let's discuss physical activity and relaxation. Do you want to know more?
+[[I would like to know more.|Node2Start]]
+[[Goodbye.|End]]
+
+<<else>>
+Which topics do you want to repeat?
+[[Physical activity.|rasmus-coaching-weekly-3-activity.Start]]
+[[Relaxation.|rasmus-coaching-weekly-3-relaxation.Start]]
+[[Something else.|StartAnders]]
+[[I want to quit.|End]]
+<<endif>>
+===
+title: Node2Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 355,101
+---
+<<if !$cpUserCompletedWeek3Activiteit>>
+First, I would like to tell you about physical activity and the effect on sleep.
+[[rasmus-coaching-weekly-3-activity.Start]]
+
+<<elseif !$cpUserCompletedWeek3Ontspanning>>
+I would now like to tell you about relaxation. Relaxing during the day is important to sleep well.
+[[rasmus-coaching-weekly-3-relaxation.Start]]
+
+<<elseif !$cpUserCompletedWeek3Stress>>
+I would now like to tell you about stress and the effect on sleep.
+[[rasmus-coaching-weekly-3-stress.Start]]
+
+<<else>>
+If you paid attention, you learned a lot about physical activity and relaxation. How much do you still know?
+[[rasmus-coaching-weekly-3-quiz.Start]]
+<<endif>>
+
+===
+title: End
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 365,367
+---
+
+===
+title: StartAnders
+tags: 
+speaker: Rasmus
+colorID: 0
+position: -33,469
+---
+Which topics do you want to repeat?
+[[Stress.|rasmus-coaching-weekly-3-stress.Start]]
+[[The quiz.|rasmus-coaching-weekly-3-quiz.Start]]
+[[Something else.|Start]]
+===

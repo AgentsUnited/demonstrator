@@ -1,0 +1,152 @@
+title: End
+tags: 
+speaker: Olivia
+colorID: 0
+position: 3018,857
+---
+
+===
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: -468,816
+---
+I get so excited meeting new people! But I will try to keep it short, as I'm sure the others are also eager to meet you.
+
+<<if $coachEmmaEnabled >>
+    [[StartCommentEmma]]
+<<elseif $coachCarlosEnabled >>
+    [[StartCommentCarlos]]
+<<else>>
+    [[StartNoComment]]
+<<endif>>
+
+===
+title: StartCommentEmma
+tags: 
+speaker: Emma
+colorID: 0
+position: -175,654
+---
+Try to keep it short Olivia... I want to talk to our new friend as well!
+
+<<if $coachCarlosEnabled >>
+    [[StartCommentCarlos2]]
+<<else>>
+    [[StartNoComment]]
+<<endif>>
+===
+title: StartNoComment
+tags: 
+speaker: Olivia
+colorID: 0
+position: 392,853
+---
+<<if $userFirstName == "User">> // Previously undisclosed
+So, my name is Olivia... who do I have the pleasure of coaching today?
+<<else>>
+So, my name is Olivia... Nice to meet you, $userFirstname!
+<<endif>>
+
+<<if $userFirstName == "User">> // Previously undisclosed
+    [[First name: <<input type="text" value="$userFirstName">>.|Role]]
+<<else>>
+    [[Nice to meet you too, Olivia.|Role]]
+<<endif>>
+===
+title: StartCommentCarlos
+tags: 
+speaker: Carlos
+colorID: 0
+position: -182,965
+---
+Yes yes, do hurry up a little bit Olivia, I look forward to have a little chat as well.
+
+[[StartNoComment]]
+===
+title: StartCommentCarlos2
+tags: 
+speaker: Carlos
+colorID: 0
+position: 101,652
+---
+Yes yes, do hurry up a little bit Olivia, I look forward to have a little chat as well.
+
+[[StartNoComment]]
+===
+title: Role
+tags: 
+speaker: Olivia
+colorID: 0
+position: 845,854
+---
+Well I promised to keep it short, $userFirstName. So, let me just quickly explain my role in the Council of Coaches.
+
+[[Role2]]
+===
+title: Role2
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1228,853
+---
+I am here to help you live a more physically active life!
+
+[[Role3]]
+===
+title: Role3
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1619,848
+---
+I will help you set up a personal plan for how to start increasing your activity day by day, and week by week.
+
+[[Role4]]
+===
+title: Role4
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1905,848
+---
+I will try to help you keep track of your daily steps, and give you feedback on your progress.
+
+[[Role5]]
+===
+title: Role5
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2230,848
+---
+Together we will work towards a new physically active you, how does that sound?
+
+[[Sounds good.|SoundsGood]]
+[[I'm not sure.|SoundsNotSure]]
+===
+title: SoundsGood
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2538,577
+---
+<<set $paUserCompletedIntroduction = true>>
+
+Excellent! I can't wait to get started.
+
+[[Neither can I.|End]]
+===
+title: SoundsNotSure
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2541,848
+---
+<<set $paUserCompletedIntroduction = true>>
+
+Hmmm, well let's give it some time. Small steps, and let's see where we end up shall we?
+
+[[Sounds good.|End]]
+===

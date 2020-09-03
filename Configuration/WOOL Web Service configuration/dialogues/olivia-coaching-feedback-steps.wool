@@ -1,0 +1,124 @@
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: 851,374
+---
+<<if $paCurrentGoalType == "steps">>
+Shall we discuss how you have been doing so far with your step goal?
+[[Sure!|Feedbackdialogue1]]
+[[I would rather not right now.|Feedbackdialoguenope]]
+<<elseif $paCurrentGoalType == "minutes">>
+Shall we discuss how you have been doing so far with your physically active minutes goal?
+[[Sure!|Feedbackdialogue1]]
+[[I would rather not right now.|Feedbackdialoguenope]]
+<<endif>>
+===
+title: End
+tags: 
+speaker: Olivia
+colorID: 0
+position: 3139,367
+---
+
+===
+title: Feedbackdialogueend
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2727,368
+---
+That is all I have got to tell you about this week. Let us move on!
+
+[[Sure thing.|End]]
+[[Yes, let us do that.|End]]
+[[Okay.|End]]
+===
+title: Feedbackdialogue1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1159,370
+---
+<<if $paCurrentGoalType == "steps">>
+So let's take a look at what your short-term goal was. It was $paShortTermStepsGoal steps per week, and you did $StepsThisWeek steps this week.
+<<elseif $paCurrentGoalType == "minutes">>
+    <<if $userAge >= 18>>
+    So let's take a look at what your short-term goal was. It was $paShortTermMinutesGoal minutes per week, and you did $MinutesThisWeek minutes this week.
+    <<elseif $userAge < 18>>
+    So let's take a look at what your short-term goal was. It was $paShortTermMinutesGoal minutes per day, and on average you did $AverageDailyMinutesThisWeek minutes daily this week.
+    <<endif>>
+<<endif>>
+[[Okay.|Feedbackdialogue2]]
+===
+title: Feedbackdialoguenope
+tags: 
+speaker: Olivia
+colorID: 0
+position: 834,1190
+---
+That is fine! We will talk about it later.
+
+[[End]]
+===
+title: Feedbackdialogue2
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1481,376
+---
+<<if $paCurrentGoalType == "steps">>
+    <<if $paShortTermStepsGoal > $StepsThisWeek>>
+    You have not made your goal this week. However, that is no reason to give up yet.
+    [[I sure hope so.|Feedbackdialogueend]]
+    [[All the more reason to try harder this week, for sure.|Feedbackdialogueend]]
+    <<elseif $paShortTermStepsGoal == $StepsThisWeek>>
+    You managed to hit your goal for this week. Good on you!
+    [[Woop woop!|Feedbackdialogueend]]
+    [[All thanks to you!|Feedbackdialogueend]]
+    <<elseif $paShortTermStepsGoal < $StepsThisWeek>>
+    You managed to exceed your goal for this week. That is amazing!
+    [[Woop woop!|Feedbackdialogueend]]
+    [[All thanks to you!|Feedbackdialogueend]]
+    <<else>>
+    Hmm. It looks like we cannot find any of your data for this week.
+    [[Huh, that is weird.|Feedbackdialogueend]]
+    <<endif>>
+<<elseif $paCurrentGoalType == "minutes">>
+    <<if $userAge >= 18>>
+        <<if $paShortTermMinutesGoal > $MinutesThisWeek>>
+        You have not made your goal this week. However, that is no reason to give up yet. Shall we set a goal for next week?
+        [[I sure hope so.|Feedbackdialogueend]]
+        [[All the more reason to try harder this week, for sure.|Feedbackdialogueend]]
+        <<elseif $paShortTermMinutesGoal == $MinutesThisWeek>>
+        You managed to hit your goal for this week. Good on you! Shall we set a goal for next week?
+        [[Woop woop!|Feedbackdialogueend]]
+        [[All thanks to you!|Feedbackdialogueend]]
+        <<elseif $paShortTermMinutesGoal < $MinutesThisWeek>>
+        You managed to exceed your goal for this week. That is amazing! Shall we set a goal for next week?
+        [[Woop woop!|Feedbackdialogueend]]
+        [[All thanks to you!|Feedbackdialogueend]]
+        <<else>>
+        Hmm. It looks like we cannot find any of your data for this week. Shall we simply set a goal for next week?
+        [[Huh, that is weird.|Feedbackdialogueend]]
+        <<endif>>
+    <<elseif $userAge < 18>>
+        <<if $paShortTermMinutesGoal > $AverageDailyMinutesThisWeek>>
+        You have not made your goal this week. However, that is no reason to give up yet. Shall we set a goal for next week?
+        [[I sure hope so.|Feedbackdialogueend]]
+        [[All the more reason to try harder this week, for sure.|Feedbackdialogueend]]
+        <<elseif $paShortTermMinutesGoal == $AverageDailyMinutesThisWeek>>
+        You managed to hit your goal for this week. Good on you! Shall we set a goal for next week?
+        [[Woop woop!|Feedbackdialogueend]]
+        [[All thanks to you!|Feedbackdialogueend]]
+        <<elseif $paShortTermMinutesGoal < $AverageDailyMinutesThisWeek>>
+        You managed to exceed your goal for this week. That is amazing! Shall we set a goal for next week?
+        [[Woop woop!|Feedbackdialogueend]]
+        [[All thanks to you!|Feedbackdialogueend]]
+        <<else>>
+        Hmm. It looks like we cannot find any of your data for this week. Shall we simply set a goal for next week?
+        [[Huh, that is weird.|Feedbackdialogueend]]
+        <<endif>>
+    <<endif>>
+<<endif>>
+===

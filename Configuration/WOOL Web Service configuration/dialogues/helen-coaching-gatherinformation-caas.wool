@@ -1,0 +1,96 @@
+title: Checkmemory
+tags: 
+speaker: Helen
+colorID: 0
+position: -480,180
+---
+<<if $esmHelenCompletedDate == $today>>
+  Oh, dear. I just remembered I already asked you about your cognitive activities today... Talk to you later!
+  [[No problem. Goodbye!|End]]
+<<else>>
+  I just have a few quick questions about your cognitive activities today, is that okay?
+  [[Sure, let's start.|QuestionC1]]
+  [[Not now.|End]]
+<<endif>>
+===
+title: QuestionC1
+tags: 
+speaker: Helen
+colorID: 1
+position: -113,178
+---
+Have you participated in any of the following tasks today, such as reading a book or newspaper, learning a new skill, watching an educational TV-show or playing a board game?
+
+[[Yes.|QuestionC2|<<set $esmCognitiveActivityToday = true>>]]
+[[No.|ClosingText|<<set $esmCognitiveActivityToday = false>>]]
+===
+title: End
+tags: 
+speaker: Helen
+colorID: 5
+position: 782,771
+---
+
+===
+title: QuestionC2
+tags: 
+speaker: Helen
+colorID: 1
+position: 239,-58
+---
+That's very good. Now, could you tell me how much time did you spend on reading today (in minutes)? Just type "0" if you didn't read at all.
+
+[[Time spent reading: <<input type="numeric" value="$esmCognitiveTimeSpentReading" min="0" max="1440">>|QuestionC3]]
+===
+title: QuestionC3
+tags: 
+speaker: Helen
+colorID: 1
+position: 588,-66
+---
+Okay, and how much time did you spend on learning a new skill, such as studying a foreign language, in minutes? Again, just type "0" if you did not do this today.
+
+[[Time spent learning a new skill: <<input type="numeric" value="$esmCognitiveTimeSpentSkills" min="0" max="1440">>|QuestionC4]]
+===
+title: QuestionC4
+tags: 
+speaker: Helen
+colorID: 1
+position: 892,-74
+---
+Very good! Now, how much time did you spend watching an educational TV-shows? Again, just type "0" if you did not do this.
+
+[[Time spent watching educational TV: <<input type="numeric" value="$esmCognitiveTimeSpentTelevision" min="0" max="1440">>|QuestionC5]]
+===
+title: QuestionC5
+tags: 
+speaker: Helen
+colorID: 1
+position: 1190,-78
+---
+And finally, how much time did you spend either playing sudoko, crossword games, puzzles, or other similar games in minutes?
+
+[[Time spent on games: <<input type="numeric" value="$esmCognitiveTimeSpentGames" min="0" max="1440">>|ClosingText]]
+===
+title: ClosingText
+tags: 
+speaker: Helen
+colorID: 1
+position: 1635,164
+---
+<<set $esmHelenCompletedDate = $today>>
+Okay, thank you so much for your time $userFirstName! Talk to you later!
+
+[[No problem. Goodbye.|End]]
+===
+title: Start
+tags: 
+speaker: Helen
+colorID: 2
+position: -773,185
+---
+Hello $userFirstName. Would you mind answering a few questions for me? Do you have some time now?
+
+[[Yes, I have some time.|Checkmemory]]
+[[Maybe later Helen. Goodbye!|End]]
+===

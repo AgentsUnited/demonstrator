@@ -1,0 +1,188 @@
+title: Start
+tags: 
+speaker: Carlos
+colorID: 2
+position: -1514,351
+---
+<<set $peerUserStartedIntroduction = true>>
+
+Oh hello there, so nice to meet you! You must be wondering who I am?
+
+[[Introduce]]
+===
+title: NotACoach
+tags: 
+speaker: Carlos
+colorID: 0
+position: 1717,475
+---
+Well, I am not educated to be a coach, like the other coaches in the council. But I did learn a thing or two since I came here.
+
+[[NotACoach2]]
+===
+title: NameProvided
+tags: 
+speaker: Carlos
+colorID: 0
+position: -316,347
+---
+Oh, $userFirstName, what a wonderful name you have! Well, welcome to the Council of Coaches.
+
+[[What is your expertise?|Expertise]]
+===
+title: End
+tags: 
+speaker: Carlos
+colorID: 5
+position: 2622,476
+---
+
+===
+title: Introduce
+tags: 
+speaker: Carlos
+colorID: 0
+position: -1219,352
+---
+As you can see, I am not the youngest person in the room, hehe. In fact, next year, I will turn 68.
+
+[[Introduce2]]
+===
+title: Introduce2
+tags: 
+speaker: Carlos
+colorID: 0
+position: -924,353
+---
+Although I may be getting a little older, I'm still enjoying every day in life.
+
+[[Introduce3]]
+===
+title: Introduce3
+tags: 
+speaker: Carlos
+colorID: 0
+position: -623,349
+---
+Oh, but where are my manners... who do I have the pleasure of talking to?
+
+[[Hello Carlos, my name is $userFirstName.|NameProvided]]
+===
+title: Expertise
+tags: 
+speaker: Carlos
+colorID: 0
+position: 18,344
+---
+Expertise? Oh no, no... I'm not a coach like the others here!
+
+[[Expertise2]]
+===
+title: Expertise2
+tags: 
+speaker: Carlos
+colorID: 0
+position: 334,343
+---
+<<if $coachOliviaEnabled>>
+    <<if $coachFrancoisEnabled>>
+        Olivia and François are helping me losing a little bit of weight.
+
+        [[OliviaAndFrancois1]]
+    <<else>>
+        Olivia is helping me get a little bit more active!
+
+        [[Olivia1]]
+    <<endif>>
+<<elseif $coachFrancoisEnabled>>
+    François is helping me eat a little bit more healthy.
+
+    [[Francois1]]
+<<else>>
+    The coaches are helping me to live a bit more healthy.
+
+    [[Coaches1]]
+<<endif>>
+===
+title: OliviaAndFrancois1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 664,100
+---
+Yep, Carlos and I have been working on a strategy to get him off that couch!
+
+[[OliviaAndFrancois2]]
+===
+title: Olivia1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 664,345
+---
+Yep, Carlos and I have been working on a strategy to get him off that couch!
+
+[[Expertise3]]
+===
+title: Francois1
+tags: 
+speaker: Francois
+colorID: 0
+position: 665,598
+---
+Ah oui, I have been trying to find some healthy recipes for Carlos... he was eating too much fried codfish!
+
+[[Expertise3]]
+===
+title: Expertise3
+tags: 
+speaker: Carlos
+colorID: 0
+position: 1388,347
+---
+So you see, the coaches are trying to help me as well. I guess you can say we are in the same boat!
+
+[[So, you are not a coach?|NotACoach]]
+===
+title: OliviaAndFrancois2
+tags: 
+speaker: Francois
+colorID: 0
+position: 994,101
+---
+And I have been trying to find some healthy recipes for Carlos... he was eating too much fried codfish!
+
+[[Expertise3]]
+===
+title: NotACoach2
+tags: 
+speaker: Carlos
+colorID: 0
+position: 2010,474
+---
+So come talk to me whenever you want to share some experiences, or just for a chat. I'm always up for a chat...
+
+[[Thank you Carlos.|IntroEnd]]
+===
+title: IntroEnd
+tags: 
+speaker: Carlos
+colorID: 0
+position: 2299,475
+---
+<<set $peerUserCompletedIntroduction = true>>
+
+It is good to have you here with us. Let me know if I can help you with anything!
+
+[[Goodbye.|End]]
+===
+title: Coaches1
+tags: 
+speaker: Carlos
+colorID: 0
+position: 664,861
+---
+Since a few years I noticed my health wasn't what it used to be anymore, so I decided to come here.
+
+[[Expertise3]]
+===

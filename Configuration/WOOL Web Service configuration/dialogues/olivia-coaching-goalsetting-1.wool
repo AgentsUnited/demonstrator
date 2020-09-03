@@ -1,0 +1,83 @@
+title: End
+tags: 
+speaker: Olivia
+colorID: 0
+position: 2129,337
+---
+
+===
+title: Goalsteps1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1795,171
+---
+<<if $hasDog == true>>
+That is a great goal! You can even try to involve your dog to give them more of a workout, and make it more fun to walk. We will start working on your average daily amount of steps per week.
+<<else>>
+That is a great goal! We will start working on your average daily amount of steps per week.
+<<endif>>
+
+[[Sounds good!|End]]
+===
+title: Goalminutes1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1796,483
+---
+That is a great goal! We can start by working on increasing your total amount of active minutes per week.
+
+[[Sounds good!|End]]
+===
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: 487,378
+---
+So our first question to you is, what kind of goal do you want to set?
+
+[[I want to feel more physically fit.|Pickgoal1]]
+===
+title: Pickgoal1
+tags: 
+speaker: Olivia
+colorID: 0
+position: 779,371
+---
+There are different ways to achieve that goal. You can either increase the amount of steps you take, or try to spend more time physically active. Either would be a good goal to get you started.
+
+[[Pickgoal2]]
+===
+title: Pickgoal2
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1044,372
+---
+Steps are not just going for walks, but are measured during anything you do. Simply walking around your house to grab something in the kitchen is also counted.
+
+[[Pickgoal3]]
+===
+title: Pickgoal3
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1307,373
+---
+And we measure your physically active time in minutes that we measured your heartbeat having increased. That happens when you put in that little bit of extra effort to do something.
+
+[[Pickgoal4]]
+===
+title: Pickgoal4
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1555,373
+---
+So, what type of goal would you prefer?
+
+[[I would like to start walking more than I do now.|Goalsteps1|<<set $paCurrentGoalType = "steps">>]]
+[[I would like to spend more time physically active than I do now.|Goalminutes1|<<set $paCurrentGoalType = "minutes">>]]
+===

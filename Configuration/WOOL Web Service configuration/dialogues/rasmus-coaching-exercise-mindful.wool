@@ -1,0 +1,53 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 373,242
+---
+To do a mindfulness exercise, we recommend you to use an audio-guided exercise.
+
+[[Mindfulness1]]
+===
+title: Mindfulness1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 735,238
+---
+You can find many different mindfulness exercises online. We recommend the website of Ger Schurink, offering mindfulness exercises in Dutch.
+
+[[Mindfulness2]]
+
+===
+title: Mindfulness2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1057,239
+---
+There are different exercises, with a female or male voice, and longer and shorter duration. Some focus on breathing, others on your body or surroundings.
+
+[[Mindfulness3]]
+===
+title: Mindfulness3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1410,235
+---
+You can try some and find the ones you like. Do you want to be redirected to the website?
+
+[[Take me to the website.|EndMindfulness|<<action type="generic" value="OPEN_LINK" url="https://www.gerschurink.nl/audio.php">>]]
+[[Not now.|EndMindfulness]]
+===
+title: EndMindfulness
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1782,235
+---
+This was the mindfulness exercise. Do you want to go back?
+
+[[Take me back.|rasmus-coaching-weekly-3-relaxation.EindeOntspanning]]
+
+===

@@ -1,0 +1,194 @@
+title: Start
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 50,173
+---
+Physical activity has many positive effects on your body and sleep. What do you want to learn first?
+<<set $cpUserCompletedWeek3ActiviteitLichaam = false>>
+<<set $cpUserCompletedWeek3ActiviteitSlaap = false>>
+<<set $cpUserCompletedWeek3ActiviteitStress = false>>
+<<set $cpUserCompletedWeek3ActiviteitTips = false>>
+
+[[Effects on my body.|Lichaam1]]
+[[Effects on sleep.|Slaap1]]
+===
+title: Lichaam1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 367,91
+---
+Physical activity improves blood circulation and strengthens your heart, lungs and bones.
+
+[[Lichaam2]]
+===
+title: Lichaam2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 665,88
+---
+In addition, physical activity reduces cholesterol and blood pressure, and it increases vitality and good appearance.
+
+[[Lichaam3]]
+===
+title: Lichaam3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 986,74
+---
+Physical activity also improves your mood and reduces symptoms of depression. This is caused by the release of endorphins.
+
+<<set $cpUserCompletedWeek3ActiviteitLichaam = true>>
+
+
+<<if !$cpUserCompletedWeek3ActiviteitSlaap>>
+[[And the effects on sleep?|Slaap1]]
+
+<<else>>
+[[Do you have tips to achieve that?|Tips1]]
+[[Does it affect stress?|Stress1]]
+<<endif>>
+===
+title: Slaap1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 369,337
+---
+Physical activity increases deep sleep.
+
+[[Slaap2]]
+===
+title: Slaap2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 988,327
+---
+Moreover, your body temperature rises during physical activity. This is compensated later, such that you fall asleep more easily.
+<<set $cpUserCompletedWeek3ActiviteitSlaap = true>>
+
+<<if !$cpUserCompletedWeek3ActiviteitLichaam>>
+[[And the effects on my body?|Lichaam1]]
+
+<<else>>
+[[Do you have tips to achieve that?|Tips1]]
+[[Does it affect stress?|Stress1]]
+<<endif>>
+===
+title: Stress1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1347,69
+---
+Physical activity can also reduce consequences of stress.
+
+[[Stress2]]
+===
+title: Stress2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1674,67
+---
+Through stress, muscle tension rises. Because of this, blood flow reduces, waste products accumulate and pain can be experienced more intense.
+
+[[Stress3]]
+===
+title: Stress3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2019,60
+---
+Physical activity helps to relax the muscles, and reduces the negative consequences of muscle tension.
+
+<<set $cpUserCompletedWeek3ActiviteitStress = true>>
+
+<<if !$cpUserCompletedWeek3ActiviteitTips>>
+[[Do you have tips?|Tips1]]
+
+<<else>>
+[[Interesting.|EindeActiviteit]]
+[[Okay.|EindeActiviteit]]
+<<endif>>
+===
+title: Tips1
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1346,314
+---
+I definitely have tips for physical activity! First, preferabyl be active at the end of the afternoon or beginning of the evening.
+
+[[Tips2]]
+===
+title: Tips2
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 1679,308
+---
+Do not exercise too intensive in the three hours before going to sleep. If you still want to exercise, go to bed a little later.
+
+[[Tips3]]
+===
+title: Tips3
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2016,305
+---
+Perform 20 minutes of physical activity at an intensity that raises your heart rate. Walking or cycling (slowly) can already help!
+
+[[Tips4]]
+===
+title: Tips4
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2316,304
+---
+Go outside, natural light helps increase the body temperature. But most important: find an activity you like!
+
+<<set $cpUserCompletedWeek3ActiviteitTips = true>>
+
+<<if !$cpUserCompletedWeek3ActiviteitStress>>
+[[And what does physical activity do against stress?|Stress1]]
+
+<<else>>
+[[Interesting.|EindeActiviteit]]
+[[Okay.|EindeActiviteit]]
+<<endif>>
+===
+title: EindeActiviteit
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2614,134
+---
+Physical activity is super good for you! And actually also a lot of fun, so do something with it!
+<<set $cpUserCompletedWeek3Activiteit = true>>
+
+<<if $cpUserCompletedWeek3>>
+[[I want to repeat something.|rasmus-coaching-weekly-3-introduction.Start]]
+[[I want to quit.|End]]
+<<else>>
+[[I will do it.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[Okay.|rasmus-coaching-weekly-3-introduction.Node2Start]]
+[[I want to quit.|End]]
+<<endif>>
+
+===
+title: End
+tags: 
+speaker: Rasmus
+colorID: 0
+position: 2913,131
+---
+
+===

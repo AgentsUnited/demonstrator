@@ -1,0 +1,102 @@
+title: Start
+tags: 
+speaker: Emma
+colorID: 2
+position: 860,383
+---
+<<if $esmSocialSatisfaction <= 1>>
+You indicated earlier that you are not satisfied with your social contacts today. It was sad to hear that.
+[[Yeah, it feels sad too.|Socialfeedback1]]
+[[Hmhm.|Socialfeedback1]]
+[[I do not really feel like talking about this.|Othertime]]
+<<elseif $esmSocialSatisfaction >= 2>>
+You indicated earlier that you are satisfied with your social contacts today. It was nice to hear that.
+[[Yeah, it feels great too.|Socialfeedback1]]
+[[Hmhm.|Socialfeedback1]]
+[[I do not really feel like talking about this.|Othertime]]
+<<endif>>
+===
+title: Socialfeedback1
+tags: 
+speaker: Emma
+colorID: 0
+position: 1188,379
+---
+<<if $esmSocialSatisfaction <= 1>>
+We hope it is not impacting your life negatively. So, how does it make you feel?
+[[Sad.|Socialfeedback2|<<set $Socialfeedbackfeeling = 0>>]]
+[[I feel neutral on it.|Socialfeedback2|<<set $Socialfeedbackfeeling = 1>>]]
+[[I am actually happy with the current situation.|Socialfeedback2|<<set $Socialfeedbackfeeling = 2>>]]
+<<elseif $esmSocialSatisfaction >= 2>>
+We hope it brightens up your days. So, how does it make you feel?
+[[Happy.|Socialfeedback2|<<set $Socialfeedbackfeeling = 2>>]]
+[[I feel neutral on it.|Socialfeedback2|<<set $Socialfeedbackfeeling = 1>>]]
+[[I am actually unhappy with the current situation.|Socialfeedback2|<<set $Socialfeedbackfeeling = 0>>]]
+<<endif>>
+===
+title: Othertime
+tags: 
+speaker: Emma
+colorID: 0
+position: 1191,750
+---
+Sure thing! We do not have to talk about it right now. Talk to you later.
+
+[[Goodbye!|End]]
+===
+title: End
+tags: 
+speaker: Emma
+colorID: 7
+position: 2134,756
+---
+
+===
+title: Socialfeedback2
+tags: 
+speaker: Emma
+colorID: 0
+position: 1512,382
+---
+<<if $esmSocialSatisfaction <= 1>>
+    <<if $Socialfeedbackfeeling == 0>>
+    It is valid to feel sad about it. I hope you you get to have more meaningful interactions tomorrow!
+    [[Thank you.|Socialfeedback3]]
+    <<elseif $Socialfeedbackfeeling == 1>>
+    It is interesting to hear you are not too affected. Still, we can try to go for more meaningful interactions tomorrow!
+    [[That sounds like a fine idea!|Socialfeedback3]]
+    [[Sure, why not.|Socialfeedback3]]
+    <<elseif $Socialfeedbackfeeling == 2>>
+    That is great to hear, but also interesting. Could you briefly explain why?
+    [[Sometimes I need a bit of time off from people.|Socialfeedback3]]
+    [[I was tired from talking to people. It felt good to get to charge up.|Socialfeedback3]]
+    [[Well, it gave me some time for myself.|Socialfeedback3]]
+    [[I cannot explain it that easily.|Socialfeedback3]]
+    <<endif>>
+<<elseif $esmSocialSatisfaction >= 2>>
+    <<if $Socialfeedbackfeeling == 0>>
+    That is sad to hear, but also interesting. Could you briefly explain why?
+    [[Some of the interactions were quite unpleasant.|Socialfeedback3]]
+    [[Something sad recently happened, so a lot of the interactions had to do with that.|Socialfeedback3]]
+    [[I got into a fight.|Socialfeedback3]]
+    [[I would rather not say.|Socialfeedback3]]
+    <<elseif $Socialfeedbackfeeling == 1>>
+    It is interesting to hear you are not too affected. Anyway, we can try to go for more meaningful interactions tomorrow!
+    [[That sounds like a fine idea!|Socialfeedback3]]
+    [[Sure, why not.|Socialfeedback3]]
+    <<elseif $Socialfeedbackfeeling == 2>>
+    That is great to hear! I hope you you get to have even more meaningful interactions tomorrow!
+    [[Thank you.|Socialfeedback3]]
+    <<endif>>
+<<endif>>
+===
+title: Socialfeedback3
+tags: 
+speaker: Emma
+colorID: 0
+position: 1827,381
+---
+Alright. Thanks for talking to me a bit about this. It is not always easy to open up. Talk to you later!
+
+[[Talk to you later, Emma!|End]]
+===

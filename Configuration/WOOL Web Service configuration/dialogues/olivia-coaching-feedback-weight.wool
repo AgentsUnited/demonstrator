@@ -1,0 +1,27 @@
+title: Start
+tags: 
+speaker: Olivia
+colorID: 0
+position: 326,222
+---
+I have the result of your weight measurement right here, let's see. $paUserWeightValue kilograms. Well, we will see how your weight evolves as you progress towards your activity goal.
+
+[[Wait, that value does not seem right, let me try again.|TryAgain]]
+[[Got it!|PreEnd]]
+===
+title: PreEnd
+tags: 
+speaker: Olivia
+colorID: 0
+position: 634,384
+---
+Stay active! Bye!
+===
+title: TryAgain
+tags: 
+speaker: Olivia
+colorID: 0
+position: 637,151
+---
+OK. I'll wait for you to take the measurement.
+===

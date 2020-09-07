@@ -28,6 +28,8 @@ speaker: Olivia
 colorID: 0
 position: 2727,368
 ---
+<<set $paUserCompletedFeedbackSteps = true>>
+
 That is all I have got to tell you about this week. Let us move on!
 
 [[Sure thing.|End]]

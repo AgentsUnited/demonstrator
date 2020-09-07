@@ -4,7 +4,8 @@ speaker: Emma
 colorID: 0
 position: -265,667
 ---
-<<if $esmEmmaCompletedDate == $today>>
+//<<if $esmEmmaCompletedDate == $today>>
+<<if $esmEmmaCompleted == true>>
   Wait a minute... I already asked about your social interactions today, didn't I? I'm very sorry. Talk to you later!
   [[Goodbye.|End]]
 <<else>>
@@ -19,7 +20,7 @@ speaker: Emma
 colorID: 5
 position: 31,398
 ---
-<<set $esmEmmaLaterDate = $today >>
+//<<set $esmEmmaLaterDate = $today >>
 Okay, understandable. I will come back to you about it later. Talk to you later!
 
 [[Sure thing. Goodbye!|End]]
@@ -112,7 +113,8 @@ speaker: Emma
 colorID: 4
 position: 1584,67
 ---
-<<set $esmEmmaCompletedDate = $today >>
+//<<set $esmEmmaCompletedDate = $today >>
+<<set $esmEmmaCompleted = true>>
 Thanks for your time $userFirstName! Talk to you later!
 
 [[Goodbye.|End]]

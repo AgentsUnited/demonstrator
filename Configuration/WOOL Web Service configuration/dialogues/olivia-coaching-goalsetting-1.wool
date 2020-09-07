@@ -12,7 +12,7 @@ speaker: Olivia
 colorID: 0
 position: 1795,171
 ---
-<<if $hasDog == true>>
+<<if $userHasDog == true>>
 That is a great goal! You can even try to involve your dog to give them more of a workout, and make it more fun to walk. We will start working on your average daily amount of steps per week.
 <<else>>
 That is a great goal! We will start working on your average daily amount of steps per week.

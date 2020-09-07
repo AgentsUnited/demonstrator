@@ -28,6 +28,8 @@ colorID: 0
 position: 584,461
 ---
 That's fine, I will remind you about it later.
+
+[[Okay.|End]]
 ===
 title: GetApp
 tags: 
@@ -56,9 +58,14 @@ title: EndMeasure
 tags: 
 speaker: Olivia
 colorID: 0
-position: 1492,-36
+position: 1493,-38
 ---
+<<set $paUserCompletedMeasurementWeight = true>>
+
 I'll wait for you to take the measurement.
+
+[[I have taken it.|End]]
+[[Can you repeat the instructions again?|AppInstructions]]
 ===
 title: AppInstructionsSteps
 tags: 
@@ -97,4 +104,12 @@ You should have received a compatible weight scale from your COUCH service provi
 The best choice for a compatible weight scale is A&D Medical Bluetooth Low Energy Weight Scale UC-BLE352.
 
 [[AppInstructionsBT]]
+===
+title: End
+tags: 
+speaker: Olivia
+colorID: 0
+position: 1878,467
+---
+
 ===

@@ -96,6 +96,8 @@ speaker: Emma
 colorID: 0
 position: 1827,381
 ---
+<<set $socUserCompletedFeedbackCaaS = true>>
+
 Alright. Thanks for talking to me a bit about this. It is not always easy to open up. Talk to you later!
 
 [[Talk to you later, Emma!|End]]

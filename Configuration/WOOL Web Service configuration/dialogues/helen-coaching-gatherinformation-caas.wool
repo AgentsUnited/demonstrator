@@ -4,7 +4,8 @@ speaker: Helen
 colorID: 0
 position: -480,180
 ---
-<<if $esmHelenCompletedDate == $today>>
+//<<if $esmHelenCompletedDate == $today>>
+<<if $esmHelenCompleted == true>>
   Oh, dear. I just remembered I already asked you about your cognitive activities today... Talk to you later!
   [[No problem. Goodbye!|End]]
 <<else>>
@@ -78,7 +79,8 @@ speaker: Helen
 colorID: 1
 position: 1635,164
 ---
-<<set $esmHelenCompletedDate = $today>>
+//<<set $esmHelenCompletedDate = $today>>
+<<set $esmHelenCompleted = true>>
 Okay, thank you so much for your time $userFirstName! Talk to you later!
 
 [[No problem. Goodbye.|End]]

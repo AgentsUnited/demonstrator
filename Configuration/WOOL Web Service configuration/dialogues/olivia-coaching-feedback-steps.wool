@@ -43,7 +43,7 @@ colorID: 0
 position: 1159,370
 ---
 <<if $paCurrentGoalType == "steps">>
-So let's take a look at what your short-term goal was. It was $paShortTermStepsGoal steps per week, and you did $StepsThisWeek steps this week.
+So let's take a look at what your short-term goal was. It was $paShortTermStepsGoal steps per day, and you did $StepsThisWeek steps per day on average this week.
 <<elseif $paCurrentGoalType == "minutes">>
     <<if $userAge >= 18>>
     So let's take a look at what your short-term goal was. It was $paShortTermMinutesGoal minutes per week, and you did $MinutesThisWeek minutes this week.

@@ -56,14 +56,14 @@ title: Socialfeedback2
 tags: 
 speaker: Emma
 colorID: 0
-position: 1512,382
+position: 1512,380
 ---
 <<if $esmSocialSatisfaction <= 1>>
     <<if $Socialfeedbackfeeling == 0>>
-    It is valid to feel sad about it. I hope you you get to have more meaningful interactions tomorrow!
+    It is valid to feel sad about it. I hope you get to have more meaningful interactions tomorrow! 
     [[Thank you.|Socialfeedback3]]
     <<elseif $Socialfeedbackfeeling == 1>>
-    It is interesting to hear you are not too affected. Still, we can try to go for more meaningful interactions tomorrow!
+    It is interesting to hear you are not too affected. Still, we can try to go for more meaningful interactions tomorrow! 
     [[That sounds like a fine idea!|Socialfeedback3]]
     [[Sure, why not.|Socialfeedback3]]
     <<elseif $Socialfeedbackfeeling == 2>>
@@ -98,7 +98,7 @@ position: 1827,381
 ---
 <<set $socUserCompletedFeedbackCaaS = true>>
 
-Alright. Thanks for talking to me a bit about this. It is not always easy to open up. Talk to you later!
+Alright. Thanks for talking to me a bit about this. It is not always easy to open up. We can talk some more about this in our next coaching session, if you'd like. Talk to you later!
 
 [[Talk to you later, Emma!|End]]
 ===

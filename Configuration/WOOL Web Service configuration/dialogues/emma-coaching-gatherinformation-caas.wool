@@ -6,8 +6,8 @@ position: -265,667
 ---
 //<<if $esmEmmaCompletedDate == $today>>
 <<if $esmEmmaCompleted == true>>
-  Wait a minute... I already asked about your social interactions today, didn't I? I'm very sorry. Talk to you later!
-  [[Goodbye.|End]]
+  Wait a minute... I already asked about your social interactions today, didn't I? I'm very sorry. 
+  [[No problem.|End]]
 <<else>>
   Great! Just a few questions about your social interactions, are you ready?
   [[Yes, let's go.|QuestionS1]]
@@ -21,9 +21,9 @@ colorID: 5
 position: 31,398
 ---
 //<<set $esmEmmaLaterDate = $today >>
-Okay, understandable. I will come back to you about it later. Talk to you later!
+Okay, understandable. I will come back to you about it later.
 
-[[Sure thing. Goodbye!|End]]
+[[Sure thing.|End]]
 ===
 title: QuestionS1
 tags: 
@@ -115,9 +115,9 @@ position: 1584,67
 ---
 //<<set $esmEmmaCompletedDate = $today >>
 <<set $esmEmmaCompleted = true>>
-Thanks for your time $userFirstName! Talk to you later!
+Thanks for your time $userFirstName!
 
-[[Goodbye.|End]]
+[[No problem.|End]]
 ===
 title: Start
 tags: 

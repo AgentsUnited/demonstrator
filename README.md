@@ -18,6 +18,7 @@ Other modules hosted elsewhere:
 * [Greta](https://github.com/isir/greta): Socio-emotional virtual characters for agents by ISIR - University of Sorbonne
 * [HMI Build](https://github.com/ArticulatedSocialAgentsPlatform/hmibuild): Multi-platform build system by HMI - University of Twente
 * [WOOL Web Service](https://github.com/woolplatform/wool/tree/master/java/WoolWebService): Knowledge base and dialogue management web service of the [WOOL Platform](https://github.com/woolplatform)
+* [Holistic Behaviour Analysis Framework](https://github.com/weusthofm/couch_hbaf): Scripts that analize mobile data to detect user behaiour changes, by BSS - University of Twente
 
 # Architecture
 
@@ -91,8 +92,14 @@ The following instructions will guide you through setting up and running the dem
 2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
 3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
 </details>
+<details><summary>Build the HBAF scripts</summary>
+Running these scripts is optional and requires running the Aware serevr beforehand
+	
+1. Go to `{demonstrator}\hbaf` and edit `short_term_main.py` lines 38 and 39 with your server and security data. This is OPTIONAL, if not done, you will be asked for this information when running the scripts.
+2. Open a command line shell, go to `{demonstrator}\hbaf` and execute the following command: `docker build --tag hbaf-app .`
+</details>
 <details><summary>Setup the Unity scene</summary>
-
+	
 1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
 1. In the Project assets panel (usually bottom-left), navigate to `\Assets\AgentsUnited\Scenes` and double-click the scene `MainScene.unity`. Unity will now import and set up all assets for your system (this may take a while). When finished your scene in the editor should look similar to this:
    ![Screenshot of the Unity editor](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/unityproject/editor.png?raw=true)
@@ -112,6 +119,12 @@ Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat
    If you prefer to use the Docker dashboard, it should look similar to this:
    ![Screenshot of the Docker dashboard](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/gui_running.png?raw=true)
 
+</details>
+<details><summary>Run HBAF scripts</summary>
+Execution of these scripts is optional.
+	
+1. Open a command line shell, go to `{demonstrator}\hbaf` and type the command `docker run  hbaf-app`
+2. If prompted to do so, enter your server and security information
 </details>
 <details><summary>Run ASAP Agent Manager</summary>
 

@@ -13,6 +13,3 @@
 [submodule "hmibuild"]
 	path = hmibuild
 	url = https://github.com/ArticulatedSocialAgentsPlatform/hmibuild.git
-[submodule "hbaf"]
-	path = hbaf
-	url = https://github.com/weusthofm/couch_hbaf.git

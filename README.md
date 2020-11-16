@@ -92,12 +92,6 @@ The following instructions will guide you through setting up and running the dem
 2. Go to `{demonstrator}\greta\bin` and edit the files `vib.ini` and `Modular.xml` to replace `./Environments/Empty.xml` with `./Environments/Projects/Council of Coaches/TechnicalDemonstrator.xml`.
 3. Also in `vib.ini`, replace `<MARY_SERVER_DIRECTORY>` with `{marytts}\bin`.
 </details>
-<details><summary>Build the HBAF scripts</summary>
-Running these scripts is optional and requires running the Aware serevr beforehand
-	
-1. Go to `{demonstrator}\hbaf` and edit `short_term_main.py` lines 38 and 39 with your server and security data. This is OPTIONAL, if not done, you will be asked for this information when running the scripts.
-2. Open a command line shell, go to `{demonstrator}\hbaf` and execute the following command: `docker build --tag hbaf-app .`
-</details>
 <details><summary>Setup the Unity scene</summary>
 	
 1. Start Unity. Select Open project, and then select the folder `{demonstrator}\unityprojet\AgentsUnitedDemo`. (You may get a warning dialog depending on your exact version of Unity. Ignore it and Continue).
@@ -119,12 +113,6 @@ Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat
    If you prefer to use the Docker dashboard, it should look similar to this:
    ![Screenshot of the Docker dashboard](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/gui_running.png?raw=true)
 
-</details>
-<details><summary>Run HBAF scripts</summary>
-Execution of these scripts is optional.
-	
-1. Open a command line shell, go to `{demonstrator}\hbaf` and type the command `docker run  hbaf-app`
-2. If prompted to do so, enter your server and security information
 </details>
 <details><summary>Run ASAP Agent Manager</summary>
 

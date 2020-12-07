@@ -109,6 +109,7 @@ Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat
 1. Start Docker
 
 ~~2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`.~~
+
 2. On Windows: double click the `{demonstrator}\daf\run-demo.bat` from your File Explorer. Wait until it is up and running.
    The console should print `Dialogue and Argumentation Framework ready` and look similar to this:
    ![Screenshot of the DAF console](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/console_running.png?raw=true)
@@ -128,7 +129,7 @@ Open a command line shell, go to `{demonstrator}\greta\bin` and type the command
 Set the ports as follows: 
 
 Port | Value to set
-----------------------------------
+-----------------------------|-----
 Thrift Command Receiver #1 | 9912
 Thrift Audio Sender #1 | 9007
 Thrift FAP Sender #1 | 9700

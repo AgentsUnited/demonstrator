@@ -107,8 +107,9 @@ Open a command line shell, go to `{marytts}\bin` and execute `marytts-server.bat
 <details><summary>Run the Dialogue and Argumentation Framework (DAF)</summary>
 
 1. Start Docker
+
 ~~2. Open a command line shell, go to `{demonstrator}\daf` and type the command `docker-compose up`.~~
-2. On Windows: double click the `{demonstrator}\daf\run-demo.bat' from your File Explorer. Wait until it is up and running.
+2. On Windows: double click the `{demonstrator}\daf\run-demo.bat` from your File Explorer. Wait until it is up and running.
    The console should print `Dialogue and Argumentation Framework ready` and look similar to this:
    ![Screenshot of the DAF console](https://github.com/AgentsUnited/documentation/blob/master/demonstrator/daf/console_running.png?raw=true)
    If you prefer to use the Docker dashboard, it should look similar to this:
@@ -125,6 +126,7 @@ On Windows: double click the `{demonstrator}\Launchers\ASAP_Superior_Couch_Start
 
 Open a command line shell, go to `{demonstrator}\greta\bin` and type the command `java –jar Modular.jar`. The Greta user interface window will open. From its menus, select File > Open and go to `{demonstrator}\greta\bin\Configurations\GretaUnity\Projects\Council of Coaches`, and select `Council of Coaches - TechnicalDemonstrator.xml`. This will open 14 smaller screens (with titles ending in #1 for agent 1 and #2 for agent two).
 Set the ports as follows: 
+
 Port | Value to set
 ----------------------------------
 Thrift Command Receiver #1 | 9912

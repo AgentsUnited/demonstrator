@@ -2,6 +2,8 @@ The Agents United Open Platform allows you to build a system of multiple virtual
 This repository contains a demonstrator af several coaching agents for different health domains.
 The Agents United platform and this demonstrator are the outcome of the [Council of Coaches european research project](https://council-of-coaches.eu/)
 
+> **Note:** This documentation is to help you download and install the various components of Agents United required for running a basic pre-configured demo. However, if you plan to create a custom interaction you need to install and configure several more components. Follow our [series of tutorials](https://github.com/AgentsUnited/documentation/wiki) to get started.
+
 # Repositories
 
 Each of the different modules that compose the Agents United platform has its own repository. Some modules are hosted and maintained here in Agents United while others are external, developed and hosted in 3rd party repositories.
